@@ -1,140 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>📖 Português — Recuperação 24/09</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📖 Português — 4º Bimestre</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; min-height: 100vh; padding-bottom: 40px; }
-.top-nav { background: #241638; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.07); }
-.top-nav .nav-brand { color: #d8b4fe; font-weight: 800; font-size: 0.85rem; }
-.top-nav span { color: rgba(255,255,255,0.4); font-size: 0.78rem; }
-.hero { background: linear-gradient(145deg,#6d28d9,#a855f7,#ec4899); padding: 38px 20px 30px; text-align: center; position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.1), transparent 60%); pointer-events: none; }
-.hero-emoji { font-size: 3.2rem; display: block; margin-bottom: 10px; position: relative; }
-.hero h1 { font-size: 1.55rem; font-weight: 900; color: white; line-height: 1.2; position: relative; }
-.hero h2 { font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400; margin-top: 6px; position: relative; }
-.hero-pill { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.73rem; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-top: 14px; position: relative; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f2ff; min-height: 100vh; padding-bottom: 40px; color: #2a1a4a; }
+.top-nav { background: #3b1d6e; padding: 10px 16px; display: flex; justify-content: space-between; }
+.top-nav .b { color: #d8b4fe; font-weight: 800; font-size: .85rem; } .top-nav span { color: rgba(255,255,255,.5); font-size: .78rem; }
+.hero { background: linear-gradient(145deg,#5b21b6,#7c3aed,#ec4899); padding: 36px 20px 28px; text-align: center; }
+.hero-emoji { font-size: 3.2rem; display: block; margin-bottom: 8px; }
+.hero h1 { font-size: 1.55rem; font-weight: 900; color: #fff; } .hero h2 { font-size: .95rem; color: rgba(255,255,255,.85); font-weight: 400; margin-top: 6px; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,.2); color: #fff; font-size: .73rem; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-top: 14px; }
 .wrap { padding: 22px 16px 0; max-width: 480px; margin: 0 auto; }
-.section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #7c3aed; margin-bottom: 12px; padding-left: 2px; }
-.card { background: white; border-radius: 20px; padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 16px rgba(124,58,237,0.1); border: 1.5px solid #ecdcfa; text-decoration: none; display: block; transition: transform 0.18s; position: relative; overflow: hidden; }
-.card:active { transform: scale(0.98); }
-.card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; border-radius: 20px 0 0 20px; }
-.card.study::before  { background: linear-gradient(180deg,#16a34a,#22c55e); }
-.card.lvl1::before   { background: linear-gradient(180deg,#7c3aed,#a855f7); }
-.card.lvl2::before   { background: linear-gradient(180deg,#f7971e,#ffd200); }
-.card.lvl3::before   { background: linear-gradient(180deg,#be185d,#7c3aed); }
-.card.gab::before    { background: linear-gradient(180deg,#1e1033,#241638); }
-.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
-.card-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
-.card.study  .card-icon { background: linear-gradient(135deg,#16a34a,#22c55e); }
-.card.lvl1   .card-icon { background: linear-gradient(135deg,#7c3aed,#a855f7); }
-.card.lvl2   .card-icon { background: linear-gradient(135deg,#f7971e,#ffd200); }
-.card.lvl3   .card-icon { background: linear-gradient(135deg,#be185d,#7c3aed); }
-.card.gab    .card-icon { background: linear-gradient(135deg,#1e1033,#241638); }
-.card-arrow { width: 28px; height: 28px; border-radius: 50%; background: #f5edfd; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 4px; }
-.card-title { font-size: 1.05rem; font-weight: 800; color: #241638; margin-bottom: 4px; }
-.card-sub   { font-size: 0.82rem; color: #8a7a9a; line-height: 1.4; }
+.label { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #7c3aed; margin: 6px 0 12px; }
+.card { background: #fff; border-radius: 20px; padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 16px rgba(234,88,12,.12); border: 1.5px solid #e6d9fb; text-decoration: none; display: block; position: relative; overflow: hidden; color: inherit; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--c); }
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.card-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: var(--c); }
+.card-arrow { width: 28px; height: 28px; border-radius: 50%; background: #f1e8ff; display: flex; align-items: center; justify-content: center; }
+.card-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 4px; } .card-sub { font-size: .82rem; color: #7a6a9a; line-height: 1.4; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.tag { font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: #f5edfd; color: #7c3aed; }
-.tag.amber  { background: #fffbeb; color: #d97706; }
-.tag.teal   { background: #fdf2f8; color: #be185d; }
-.tag.green  { background: #f0fdf4; color: #16a34a; }
-.steps { background: white; border-radius: 18px; padding: 16px; border: 1.5px solid #ecdcfa; box-shadow: 0 2px 12px rgba(124,58,237,0.08); margin-bottom: 14px; }
-.steps-title { font-size: 0.85rem; font-weight: 800; color: #241638; margin-bottom: 12px; }
-.step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
-.step:last-child { margin-bottom: 0; }
-.step-num { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg,#7c3aed,#16a34a); color: white; font-size: 0.75rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
-.step-text { font-size: 0.85rem; color: #5c4a6e; line-height: 1.5; }
-.step-text strong { color: #7c3aed; }
-.focus-banner { background: linear-gradient(135deg,#fdf2f8,#f5edfd); border: 1.5px solid #f3d9f0; border-radius: 16px; padding: 14px 16px; margin-bottom: 14px; }
-.focus-title { font-size: 0.78rem; font-weight: 800; color: #be185d; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-.focus-list { font-size: 0.85rem; color: #4a3a5a; line-height: 1.7; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #d8b4fe; }
-</style>
-</head>
-<body>
-<div class="top-nav">
-  <span class="nav-brand">📖 Português</span>
-  <span>Recuperação 24/09</span>
-</div>
-<div class="hero">
-  <span class="hero-emoji">📖</span>
-  <h1>Recuperação de Português</h1>
-  <h2>Capítulos 7, 8 e 9 · Revisão Completa</h2>
-  <div class="hero-pill">📝 Prova: 24/09 · Valor: 10,0</div>
-</div>
+.tag { font-size: .7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: #f1e8ff; color: #6d28d9; }
+.box { background: #fff; border-radius: 18px; padding: 16px; border: 1.5px solid #e6d9fb; margin-bottom: 14px; }
+.box-title { font-size: .85rem; font-weight: 800; margin-bottom: 10px; }
+.step { display: flex; gap: 10px; margin-bottom: 10px; font-size: .86rem; line-height: 1.5; color: #4a3a6a; }
+.step-num { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg,#7c3aed,#16a34a); color: #fff; font-size: .75rem; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+</style></head><body>
+<div class="top-nav"><span class="b">📖 Português</span><span>4º Bimestre</span></div>
+<div class="hero"><span class="hero-emoji">📖</span><h1>Campanhas, Sentidos e Frases</h1><h2>Livro + revisão da professora · Conteúdo completo</h2><div class="hero-pill">📝 Conteúdo explicado de um jeito simples</div></div>
 <div class="wrap">
-
-  <div class="focus-banner">
-    <div class="focus-title">🎯 Foco da avaliação</div>
-    <div class="focus-list">
-      📖 Interpretação de textos (título, expressões, assunto)<br>
-      🧩 Organização de frases<br>
-      🎯 Sílaba tônica<br>
-      🔤 Uso do R — as 5 categorias (atenção à pegadinha!)<br>
-      📓 Gêneros textuais: diário, tirinha e verbete<br>
-      🔄 Verbo e suas combinações (AM/ÃO)<br>
-      🎭 Polissemia<br>
-      🔤 Diferentes grafemas para o som de /S/<br>
-      🏷️ Sufixos -ADA/-ADO<br>
-      🔗 Ditongos
-    </div>
-  </div>
-
-  <div class="steps">
-    <div class="steps-title">📌 Como usar este material</div>
-    <div class="step"><div class="step-num">1</div><div class="step-text">Comece pelo <strong>Resumo</strong> — leia todo o conteúdo antes de fazer qualquer avaliação.</div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-text">Faça a avaliação <strong>Nível 1</strong> para testar o básico.</div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-text">Avance para o <strong>Nível 2</strong> e depois o <strong>Nível 3</strong> com gabarito completo.</div></div>
-  </div>
-
-  <div class="section-label">📖 Comece aqui</div>
-  <a class="card study" href="resumo_conteudo.html">
-    <div class="card-top"><div class="card-icon">📚</div><div class="card-arrow">→</div></div>
-    <div class="card-title">Resumo do Conteúdo</div>
-    <div class="card-sub">Estude os 13 conteúdos da prova antes de responder as avaliações — agora com o Capítulo 9!</div>
-    <div class="tags">
-      <span class="tag">Interpretação</span><span class="tag">Os textos</span><span class="tag">Organização de frases</span>
-      <span class="tag">Sílaba tônica</span><span class="tag">R ou RR</span><span class="tag">Verbos</span><span class="tag">Verbete</span>
-      <span class="tag">Gêneros textuais</span><span class="tag">Polissemia</span><span class="tag">Som de S</span><span class="tag">-ADA/-ADO</span><span class="tag">Ditongos</span>
-    </div>
-  </a>
-
-  <div class="section-label" style="margin-top:8px;">📝 Avaliações</div>
-  <a class="card lvl1" href="nivel1_basico.html">
-    <div class="card-top"><div class="card-icon">⭐</div><div class="card-arrow">→</div></div>
-    <div class="card-title">Nível 1 — Básico</div>
-    <div class="card-sub">36 questões de múltipla escolha com feedback imediato e dicas.</div>
-    <div class="tags"><span class="tag">Fácil</span><span class="tag">Múltipla escolha</span><span class="tag">36 questões</span></div>
-  </a>
-  <a class="card lvl2" href="nivel2_intermediario.html">
-    <div class="card-top"><div class="card-icon">🔥</div><div class="card-arrow">→</div></div>
-    <div class="card-title">Nível 2 — Intermediário</div>
-    <div class="card-sub">36 questões com múltipla escolha e campos para digitar.</div>
-    <div class="tags"><span class="tag amber">Médio</span><span class="tag">Digitar respostas</span><span class="tag">36 questões</span></div>
-  </a>
-  <a class="card lvl3" href="nivel3_avancado.html">
-    <div class="card-top"><div class="card-icon">💎</div><div class="card-arrow">→</div></div>
-    <div class="card-title">Nível 3 — Avançado</div>
-    <div class="card-sub">44 questões: interpretação, organização de frases e reflexão. Com gabarito!</div>
-    <div class="tags"><span class="tag teal">Difícil</span><span class="tag">Leitura e raciocínio</span><span class="tag">44 questões</span><span class="tag green">Gabarito</span></div>
-  </a>
-
-  <div class="section-label" style="margin-top:8px;">📋 Gabarito</div>
-  <a class="card gab" href="gabarito.html">
-    <div class="card-top"><div class="card-icon">📋</div><div class="card-arrow">→</div></div>
-    <div class="card-title">Gabarito Completo</div>
-    <div class="card-sub">Respostas e explicações dos 3 níveis em um só lugar. Para conferir depois da prova.</div>
-    <div class="tags"><span class="tag">⭐ Nível 1</span><span class="tag amber">🔥 Nível 2</span><span class="tag teal">💎 Nível 3</span><span class="tag green">Com explicações</span></div>
-  </a>
-</div>
-<div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
-
-
-
-</body>
-</html>
+<div class="box"><div class="box-title">📌 Como usar este material</div>
+<div class="step"><div class="step-num">1</div><div>Leia o <strong>Resumo</strong> com calma, uma parte de cada vez.</div></div>
+<div class="step"><div class="step-num">2</div><div>Faça o <strong>Nível 1</strong> pra testar o básico.</div></div>
+<div class="step"><div class="step-num">3</div><div>Depois o <strong>Nível 2</strong> e o <strong>Nível 3</strong>. Errou? Leia a explicação que aparece e tente de novo!</div></div></div>
+<div class="label">📖 Comece aqui</div>
+<a class="card" style="--c:#16a34a" href="resumo_conteudo.html"><div class="card-top"><div class="card-icon">📚</div><div class="card-arrow">→</div></div><div class="card-title">Resumo do Conteúdo</div><div class="card-sub">8 partes com tudo do conteúdo, em linguagem simples.</div><div class="tags"><span class="tag">Campanha</span><span class="tag">Sentido figurado</span><span class="tag">Siglas</span><span class="tag">Frases</span><span class="tag">Cordel</span></div></a>
+<div class="label" style="margin-top:8px">📝 Avaliações</div>
+<a class="card" style="--c:#7c3aed" href="nivel1_basico.html"><div class="card-top"><div class="card-icon">⭐</div><div class="card-arrow">→</div></div><div class="card-title">Nível 1 — Básico</div><div class="card-sub">46 questões de múltipla escolha, com explicação em cada resposta.</div><div class="tags"><span class="tag">Fácil</span><span class="tag">46 questões</span></div></a><a class="card" style="--c:#d97706" href="nivel2_intermediario.html"><div class="card-top"><div class="card-icon">🔥</div><div class="card-arrow">→</div></div><div class="card-title">Nível 2 — Intermediário</div><div class="card-sub">28 questões: escolher e também escrever a resposta.</div><div class="tags"><span class="tag">Médio</span><span class="tag">28 questões</span></div></a><a class="card" style="--c:#a855f7" href="nivel3_avancado.html"><div class="card-top"><div class="card-icon">💎</div><div class="card-arrow">→</div></div><div class="card-title">Nível 3 — Avançado</div><div class="card-sub">38 questões: leituras (cordel e cartaz), análise de frases, verdadeiro ou falso e reflexão.</div><div class="tags"><span class="tag">Desafio</span><span class="tag">38 questões</span></div></a>
+<div class="label" style="margin-top:8px">📋 Depois de estudar</div>
+<a class="card" style="--c:#3b1d6e" href="gabarito.html"><div class="card-top"><div class="card-icon">📋</div><div class="card-arrow">→</div></div><div class="card-title">Gabarito Completo</div><div class="card-sub">Todas as respostas com explicação.</div><div class="tags"><span class="tag">3 níveis</span><span class="tag">Com explicações</span></div></a>
+</div><div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div></body></html>

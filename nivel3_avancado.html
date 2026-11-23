@@ -1,757 +1,181 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>💎 Nível 3 – Avançado</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>💎 Nível 3 — Avançado – Português</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1a0f24; min-height: 100vh; padding-bottom: 40px; color:#f9f0fb; }
-.top-nav { background: rgba(0,0,0,0.5); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #be185d; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #be185d; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #241a3a; color: #f8f1ff; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #160e2a; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #d8b4fe; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #f472b6; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #f472b6; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #be185d; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(190,24,93,0.9),rgba(124,58,237,0.9)); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
-.level-tag { display: inline-block; background: linear-gradient(90deg,#be185d,#7c3aed); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #f472b6; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(234,88,12,.9),rgba(168,85,247,.9)); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(216,180,254,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(216,180,254,0.85); cursor: pointer; }
-.info-banner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
-.info-banner strong { color: #d8b4fe; }
-.score-bar { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #f472b6; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #f472b6; cursor: pointer; }
+.info-banner { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #f472b6; }
+.score-bar { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: rgba(246,239,255,.65); }
 .score-num { font-size: 1.4rem; font-weight: 900; color: #d8b4fe; }
-.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.2); }
-.card.reflect { border: 1px dashed rgba(216,180,254,0.4); }
-.q-num { background: linear-gradient(135deg,#be185d,#7c3aed); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.4); margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #f4e9fa; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #d8b4fe; font-weight: 700; }
-.q-hint { background: rgba(190,24,93,0.08); border: 1px solid rgba(190,24,93,0.25); border-radius: 10px; padding: 9px 12px; margin-bottom: 12px; font-size: 0.83rem; color: #f9a8d4; line-height: 1.5; }
+.card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #f472b6; }
+.card.passage { border-left: 5px solid #f472b6; }
+.q-num { background: linear-gradient(135deg,#7c3aed,#a855f7); color: #fff; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #f472b6; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #f4e9fa; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
-.opt-btn.correct { background: rgba(52,211,153,0.15); border-color: #34d399; color: #6ee7b7; }
-.opt-btn.wrong   { background: rgba(248,113,113,0.12); border-color: #f87171; color: #fca5a5; }
+.opt-btn { background: rgba(255,255,255,.06); border: 2px solid rgba(255,255,255,.14); border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #f8f1ff; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
+.opt-btn.correct { background: rgba(52,211,153,.15); border-color: #34d399; color: #a7f3d0; }
+.opt-btn.wrong { background: rgba(248,113,113,.15); border-color: #f87171; color: #fecaca; }
 .opt-btn.disabled { pointer-events: none; }
-.blank-input { background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 11px 13px; color: white; font-size: 0.92rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
-.blank-input:focus { border-color: #be185d; }
-.blank-input.correct-input { border-color: #4ade80; }
-.blank-input.wrong-input   { border-color: #f87171; }
-textarea.blank-input { min-height: 80px; resize: vertical; font-family: inherit; }
-.check-btn { background: linear-gradient(135deg,#be185d,#7c3aed); border: none; border-radius: 10px; padding: 11px 20px; font-size: 0.9rem; font-family: inherit; font-weight: 800; color: white; cursor: pointer; display: block; width: 100%; }
-.check-btn:disabled { opacity: 0.35; pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input { background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.14); border-radius: 10px; padding: 11px 13px; color: #fff; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #f472b6; }
+.blank-input.correct-input { border-color: #34d399; }
+.blank-input.wrong-input { border-color: #f87171; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#7c3aed,#a855f7); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #fff; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.35); color: #6ee7b7; }
-.feedback.nok { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.35); color: #fca5a5; }
-.feedback.model { background: rgba(216,180,254,0.1); border: 1px solid rgba(216,180,254,0.35); color: #ecd8ff; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #fcd34d; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#be185d,#7c3aed); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(124,58,237,0.3); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.ok { background: rgba(52,211,153,.15); border: 1px solid #34d399; color: #a7f3d0; }
+.feedback.nok { background: rgba(248,113,113,.15); border: 1px solid #f87171; color: #fecaca; }
+.feedback.model { background: rgba(255,255,255,.05); border: 1px solid #f472b6; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#7c3aed,#a855f7); color: #fff; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#be185d,#d8b4fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #f472b6; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#d8b4fe,#6d28d9); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(124,58,237,0.15); border: 1.5px solid rgba(124,58,237,0.3); color: #d8b4fe !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7) !important; }
-.btn-next { background: linear-gradient(135deg,#1e1033,#241638); color: white !important; }
-.btn-home-only { background: rgba(124,58,237,0.12); border: 1.5px solid rgba(124,58,237,0.3); color: #d8b4fe !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
-.credit strong { color: #d8b4fe; }
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .info-banner, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#7c3aed,#a855f7); color: #fff; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #f472b6; color: #f472b6 !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #f472b6; color: #f472b6; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#7c3aed,#a855f7); color: #fff; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
 body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
-body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-body.pdf-export .card { border: 1px solid #ccc !important; }
-body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
 body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
-body.pdf-export .check-btn { display: none !important; }
-body.pdf-export .feedback { display: none !important; }
-body.pdf-export .q-hint { border: 1px solid #ddd !important; }
-body.pdf-export .header { background: white !important; border-bottom: 2px solid #be185d !important; }
-body.pdf-export .header h1, body.pdf-export .header p, body.pdf-export .level-tag { color: #111 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #7c3aed !important; }
 body.pdf-export .credit { color: #888 !important; }
-</style>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">💎 Nível 3 — Avançado</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">📖 Avaliação de Português — Nível 3</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 3</div>
-  <h1>💎 Avançado</h1>
-  <p>Leitura, raciocínio e reflexão — 44 questões</p>
-</div>
-
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">💎 Nível 3 — Avançado</span></div>
+<div class="exam-header"><div class="eh-title">📖 Avaliação de Português — Nível 3 — Avançado</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 3 — Avançado</div><h1>💎 Nível 3 — Avançado</h1><p>Leituras, frases e reflexão — 38 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 41</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 41</span>
-</div>
-
-<!-- Q1 -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Interpretação · Diário de Maura</span>
-  <div class="q-hint">📖 A pesquisadora Maura Eduarda Brandão escreveu um diário sobre sua viagem às Ilhas Galápagos.</div>
-  <div class="q-text">Segundo o texto, em qual arquipélago ficam as ilhas Santa Cruz e Seymour, visitadas pela autora?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! As ilhas visitadas ficam no arquipélago de Galápagos." data-tip="">Galápagos</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! O texto não fala sobre esse arquipélago." data-tip="💡 Pense no título do texto: 'Diário de Maura — Galápagos'.">Fernando de Noronha</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! O texto não fala sobre esse arquipélago." data-tip="💡 Pense no título do texto: 'Diário de Maura — Galápagos'.">Abrolhos</button>
-  </div>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Interpretação · Diário de Maura</span>
-  <div class="q-text">O texto "Diário de Maura" foi escrito em qual formato?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! É um diário, com data e relato pessoal." data-tip="">Diário</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Notícias têm outro formato, com data de publicação e fonte." data-tip="💡 Observe a data no início do texto e o tom pessoal.">Notícia de jornal</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Não há nenhum modo de preparo no texto." data-tip="💡 Observe a data no início do texto e o tom pessoal.">Receita culinária</button>
-  </div>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 blank -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Interpretação · Naturário</span>
-  <div class="q-text">De acordo com o texto sobre o "Naturário", o ano de 2020 foi marcado por qual situação mundial que inspirou o projeto?</div>
-  <input type="text" class="blank-input" id="inp-q3" placeholder="Digite sua resposta...">
-  <button class="check-btn" id="btn-q3">Verificar resposta</button>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Interpretação · Naturário</span>
-  <div class="q-text">O "Naturário" incentiva as crianças a fazerem o quê diariamente?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! O Naturário incentiva registrar uma ação de aproximação com a natureza todo dia." data-tip="">Registrar uma ação de aproximação com a natureza</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! O texto não fala sobre isso." data-tip="💡 Pense na hashtag #TodoDiaLáForaSCN.">Assistir desenhos animados</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! O texto não fala sobre isso." data-tip="💡 Pense na hashtag #TodoDiaLáForaSCN.">Fazer compras no mercado</button>
-  </div>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Interpretação · Mafalda</span>
-  <div class="q-hint">📖 Nas tirinhas, Mafalda e Miguelito observam as árvores de um parque.</div>
-  <div class="q-text">Na tirinha, o que Mafalda compara à cor verde das árvores?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q5" data-correct="true" data-msg="Isso mesmo! Mafalda brinca dizendo que as árvores verdes parecem um sinal de trânsito." data-tip="">O sinal de trânsito (semáforo)</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! A tirinha não fala sobre esse assunto." data-tip="💡 Pense em Miguelito perguntando sobre atravessar a rua.">Uma bandeira</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! A tirinha não fala sobre esse assunto." data-tip="💡 Pense em Miguelito perguntando sobre atravessar a rua.">Um uniforme escolar</button>
-  </div>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 blank -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "MARINHA" tem a sílaba tônica em ma-RI-nha (penúltima). É uma palavra <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q6" placeholder="Digite a classificação...">
-  <button class="check-btn" id="btn-q6">Verificar resposta</button>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Qual destas palavras tem a sílaba tônica na antepenúltima posição (proparoxítona)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q7" data-correct="true" data-msg="Isso mesmo! Óculo (Ó-cu-lo) é proparoxítona." data-tip="">óculo</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Água (Á-gua) é paroxítona." data-tip="💡 Conte as sílabas de 'óculo': Ó-cu-lo.">água</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Jiló (ji-LÓ) é oxítona." data-tip="💡 Conte as sílabas de 'óculo': Ó-cu-lo.">jiló</button>
-  </div>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 blank -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Complete: contamos a posição da sílaba tônica sempre de trás para a frente, ou seja, do <strong>______</strong> para o início da palavra.</div>
-  <input type="text" class="blank-input" id="inp-q8" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q8">Verificar resposta</button>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Por que a palavra "honra" se escreve com um R só, mesmo tendo som forte?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! Depois de consoante, usa-se sempre um R só, mesmo com som forte." data-tip="">Porque o R vem depois de uma consoante (N)</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Existe uma explicação clara para essa regra." data-tip="💡 Observe a letra 'N' logo antes do R.">Porque é uma exceção sem motivo</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! A letra H não influencia essa regra." data-tip="💡 Observe a letra 'N' logo antes do R.">Porque a palavra começa com H</button>
-  </div>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Complete a frase com a palavra correta: "Nós fomos de ______ até a praia." (veículo)</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Carro (som forte entre vogais) se escreve com RR." data-tip="">carro</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Caro significa 'de preço alto', não é o veículo." data-tip="💡 Pense no veículo usado para viajar.">caro</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Carinho não é um meio de transporte." data-tip="💡 Pense no veículo usado para viajar.">carinho</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 blank -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Complete: "Esse relógio é muito ______." (de preço alto)</div>
-  <input type="text" class="blank-input" id="inp-q11" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q11">Verificar resposta</button>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Observe as palavras soltas: "abriu" — "Miguelito" — "o sinal". Qual é a frase corretamente organizada?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! Sujeito (Miguelito) + verbo (abriu) + complemento (o sinal)." data-tip="">Miguelito abriu o sinal.</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Essa ordem não é natural na língua portuguesa." data-tip="💡 Pense em quem primeiro pratica a ação.">O sinal Miguelito abriu.</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Essa ordem embaralha a frase." data-tip="💡 Pense em quem primeiro pratica a ação.">Abriu sinal o Miguelito.</button>
-  </div>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Na frase "Miguelito abriu o sinal", o verbo é:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Miguelito é o sujeito, quem pratica a ação." data-tip="💡 O verbo indica a ação praticada.">Miguelito</button>
-    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! Abriu é o verbo, indicando a ação." data-tip="">abriu</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! 'O sinal' é o complemento da frase." data-tip="💡 O verbo indica a ação praticada.">o sinal</button>
-  </div>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 blank -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Na frase "As árvores já ficaram verdes", o que vem ANTES do verbo "ficaram"?</div>
-  <input type="text" class="blank-input" id="inp-q14" placeholder="Digite a expressão...">
-  <button class="check-btn" id="btn-q14">Verificar resposta</button>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
-<!-- Q15 -->
-<div class="card" id="q15">
-  <div class="q-num">15</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">O que geralmente indica a palavra ou expressão que vem DEPOIS do verbo em uma frase?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q15" data-correct="true" data-msg="Isso mesmo! Depois do verbo geralmente vem o complemento (o quê, como, onde, quando)." data-tip="">O complemento (o quê, como, onde, quando)</button>
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! O sujeito geralmente vem antes do verbo." data-tip="💡 Pense na frase 'Miguelito abriu o sinal'.">Quem pratica a ação (sujeito)</button>
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Isso não tem relação com a estrutura da frase." data-tip="💡 Pense na frase 'Miguelito abriu o sinal'.">O título do parágrafo</button>
-  </div>
-  <div class="feedback" id="fb-q15"></div>
-</div>
-
-<!-- Q16 -->
-<div class="card" id="q16">
-  <div class="q-num">16</div><span class="q-type">Interpretação · Mafalda</span>
-  <div class="q-text">Qual é a finalidade principal de uma tirinha (quadrinho curto), como as da Mafalda?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! Tirinhas contam uma cena curta, muitas vezes com humor ou reflexão." data-tip="">Contar uma cena curta, com humor ou reflexão</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Tirinhas não têm essa finalidade." data-tip="💡 Pense no formato de quadrinhos com poucas falas.">Dar uma receita culinária</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Tirinhas não têm essa finalidade." data-tip="💡 Pense no formato de quadrinhos com poucas falas.">Vender um produto</button>
-  </div>
-  <div class="feedback" id="fb-q16"></div>
-</div>
-
-<!-- Q17 blank -->
-<div class="card" id="q17">
-  <div class="q-num">17</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "FÁCIL" tem a sílaba tônica em FÁ-cil (penúltima). É uma palavra <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q17" placeholder="Digite a classificação...">
-  <button class="check-btn" id="btn-q17">Verificar resposta</button>
-  <div class="feedback" id="fb-q17"></div>
-</div>
-
-<!-- Q18 -->
-<div class="card" id="q18">
-  <div class="q-num">18</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Assinale a alternativa que apresenta uma palavra oxítona:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Jiló (ji-LÓ) tem a tônica na última sílaba." data-tip="">jiló</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Fácil é paroxítona." data-tip="💡 Pense em qual dessas termina com o som mais forte.">fácil</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Óculo é proparoxítona." data-tip="💡 Pense em qual dessas termina com o som mais forte.">óculo</button>
-  </div>
-  <div class="feedback" id="fb-q18"></div>
-</div>
-
-<!-- Reading passage -->
-<div class="card" id="reading-passage">
-  <div class="q-type">📖 Leitura — O Jardim da Vovó Alzira</div>
-  <div class="q-text" style="margin-top:8px;">Na casinha amarela da esquina, morava dona Alzira, uma senhora que cuidava de um jardim enorme atrás de casa. Todos os dias, ela dizia para o neto Bento: "Ali no fundo do jardim está escondido o meu maior tesouro."<br><br>
-  Um dia, Bento resolveu cavar perto da roseira mais velha, certo de que ia encontrar moedas de ouro. Cavou, cavou... e encontrou apenas uma caixinha de madeira cheia de sementes secas.<br><br>
-  Bento ficou com a cara amarrada: "Vovó, só tinha sementes velhas aí dentro!"<br><br>
-  Dona Alzira sorriu e pegou a mão do neto: "Essas sementes vão virar flores que a gente planta juntos todo ano, meu filho. E as flores, a gente compartilha com os vizinhos. Esse é o meu tesouro: o que plantamos e o que damos aos outros."</div>
-</div>
-
-<!-- Q19 -->
-<div class="card" id="q19b">
-  <div class="q-num">19</div><span class="q-type">Interpretação · Sentido literal</span>
-  <div class="q-text">No sentido literal (real) da história, o que Bento esperava encontrar no fundo do jardim?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q19b" data-correct="true" data-msg="Isso mesmo! Bento esperava encontrar moedas de ouro." data-tip="">Moedas de ouro</button>
-    <button class="opt-btn" data-q="q19b" data-correct="false" data-msg="Errado! Foi o que ele encontrou, não o que esperava encontrar." data-tip="💡 Releia o trecho: 'certo de que ia encontrar moedas de ouro'.">Sementes secas</button>
-    <button class="opt-btn" data-q="q19b" data-correct="false" data-msg="Errado! O texto não menciona isso." data-tip="💡 Releia o trecho: 'certo de que ia encontrar moedas de ouro'.">Uma carta antiga</button>
-  </div>
-  <div class="feedback" id="fb-q19b"></div>
-</div>
-
-<!-- Q20 -->
-<div class="card" id="q20b">
-  <div class="q-num">20</div><span class="q-type">Interpretação · Sentido figurado</span>
-  <div class="q-text">Qual é a interpretação (sentido figurado) da frase da vovó: "esse é o meu tesouro"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q20b" data-correct="true" data-msg="Isso mesmo! O 'tesouro' da vovó é o ato de plantar e compartilhar, não riqueza material." data-tip="">O que ela mais valoriza é plantar e compartilhar com os outros</button>
-    <button class="opt-btn" data-q="q20b" data-correct="false" data-msg="Errado! O texto não fala sobre moedas escondidas de verdade." data-tip="💡 Pense no que a vovó realmente valoriza, além do dinheiro.">Ela tinha moedas de ouro escondidas em outro lugar</button>
-    <button class="opt-btn" data-q="q20b" data-correct="false" data-msg="Errado! A vovó não queria enganar o neto, ela queria ensinar algo." data-tip="💡 Pense no que a vovó realmente valoriza, além do dinheiro.">Ela queria enganar o neto de propósito</button>
-  </div>
-  <div class="feedback" id="fb-q20b"></div>
-</div>
-
-<!-- Q21 -->
-<div class="card" id="q21b">
-  <div class="q-num">21</div><span class="q-type">Interpretação · Intenção do autor</span>
-  <div class="q-text">Por que o autor escolheu colocar sementes dentro da caixa, e não moedas de verdade?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q21b" data-correct="true" data-msg="Isso mesmo! As sementes representam que o valor está em cultivar e compartilhar, não em riquezas materiais." data-tip="">Para mostrar que o verdadeiro valor está em cultivar e compartilhar</button>
-    <button class="opt-btn" data-q="q21b" data-correct="false" data-msg="Errado! O texto não fala sobre jardinagem como profissão." data-tip="💡 Pense na mensagem final que a vovó passa para o neto.">Para ensinar Bento a ser jardineiro profissional</button>
-    <button class="opt-btn" data-q="q21b" data-correct="false" data-msg="Errado! Isso não tem relação com a mensagem do texto." data-tip="💡 Pense na mensagem final que a vovó passa para o neto.">Porque sementes custam menos do que moedas de ouro</button>
-  </div>
-  <div class="feedback" id="fb-q21b"></div>
-</div>
-
-<!-- Q22 blank -->
-<div class="card" id="q22">
-  <div class="q-num">22</div><span class="q-type">Verbos</span>
-  <div class="q-text">Complete no passado: "No mês passado, eles <strong>______</strong> de viagem." (voltar)</div>
-  <input type="text" class="blank-input" id="inp-q22" placeholder="Digite o verbo...">
-  <button class="check-btn" id="btn-q22">Verificar resposta</button>
-  <div class="feedback" id="fb-q22"></div>
-</div>
-
-<!-- Q23 -->
-<div class="card" id="q23">
-  <div class="q-num">23</div><span class="q-type">O Verbete</span>
-  <div class="q-text">Um verbete de dicionário costuma indicar a classe gramatical da palavra de forma abreviada. Qual destas abreviações representa "substantivo feminino"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q23" data-correct="true" data-msg="Isso mesmo! s.f. abrevia 'substantivo feminino'." data-tip="">s.f.</button>
-    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Essa não é a abreviação usada para substantivo feminino." data-tip="💡 Pense nas iniciais de 'substantivo' e 'feminino'.">v.t.</button>
-    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Essa não é a abreviação usada para substantivo feminino." data-tip="💡 Pense nas iniciais de 'substantivo' e 'feminino'.">adj.</button>
-  </div>
-  <div class="feedback" id="fb-q23"></div>
-</div>
-
-<!-- Q24 -->
-<div class="card" id="q24">
-  <div class="q-num">24</div><span class="q-type">Interpretação · Poema "Colorir"</span>
-  <div class="q-hint">📖 No poema "Colorir", o eu lírico deseja colorir o céu, o mar, a bandeira, o coração e a casa com diferentes cores.</div>
-  <div class="q-text">Qual destes elementos NÃO aparece no poema "Colorir" como algo a ser colorido?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q24" data-correct="true" data-msg="Isso mesmo! O Sol não aparece como um dos elementos a ser colorido no poema." data-tip="">O Sol</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! O céu aparece no poema." data-tip="💡 Releia a lista: céu, mar, bandeira, coração e casa.">O céu</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! O coração aparece no poema." data-tip="💡 Releia a lista: céu, mar, bandeira, coração e casa.">O coração</button>
-  </div>
-  <div class="feedback" id="fb-q24"></div>
-</div>
-
-<!-- Q25 -->
-<div class="card" id="q25">
-  <div class="q-num">25</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Qual é a finalidade principal de um poema como "Colorir"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q25" data-correct="true" data-msg="Isso mesmo! Poemas expressam sentimentos de forma criativa, com rimas e recursos poéticos." data-tip="">Expressar sentimentos de forma criativa, com rimas</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Isso descreve melhor um verbete." data-tip="💡 Pense na estrutura em versos e rimas do poema.">Explicar o significado de palavras difíceis</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Isso descreve melhor uma notícia de jornal." data-tip="💡 Pense na estrutura em versos e rimas do poema.">Informar fatos reais e recentes</button>
-  </div>
-  <div class="feedback" id="fb-q25"></div>
-</div>
-
-<!-- Q26 blank -->
-<div class="card" id="q26">
-  <div class="q-num">26</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Complete: no poema, os versos que terminam com sons parecidos formam as <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q26" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q26">Verificar resposta</button>
-  <div class="feedback" id="fb-q26"></div>
-</div>
-
-<!-- Q27 -->
-<div class="card" id="q27">
-  <div class="q-num">27</div><span class="q-type">Polissemia</span>
-  <div class="q-text">No poema, a palavra "casa" é usada com o sentido de "formarem par" (casar). Isso é um exemplo de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q27" data-correct="true" data-msg="Isso mesmo! A palavra 'casa' aqui não significa moradia, e sim uma forma do verbo casar — polissemia." data-tip="">Polissemia</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense nos dois significados possíveis da palavra 'casa'.">Sílaba tônica</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense nos dois significados possíveis da palavra 'casa'.">Ditongo</button>
-  </div>
-  <div class="feedback" id="fb-q27"></div>
-</div>
-
-<!-- Q28 -->
-<div class="card" id="q28">
-  <div class="q-num">28</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Na palavra "excesso", quais letras juntas representam o som de S na primeira sílaba tônica?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q28" data-correct="true" data-msg="Isso mesmo! Em 'excesso', o som de S é representado por XC." data-tip="">XC</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! SS aparece em 'pessoa', não em 'excesso'." data-tip="💡 Observe as letras antes do 'esso' em 'excesso'.">SS</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! SC aparece em 'nascimento', não em 'excesso'." data-tip="💡 Observe as letras antes do 'esso' em 'excesso'.">SC</button>
-  </div>
-  <div class="feedback" id="fb-q28"></div>
-</div>
-
-<!-- Q29 blank -->
-<div class="card" id="q29">
-  <div class="q-num">29</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Complete: a palavra "pessoa" tem o som de S representado pela letra dupla <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q29" placeholder="Digite a letra...">
-  <button class="check-btn" id="btn-q29">Verificar resposta</button>
-  <div class="feedback" id="fb-q29"></div>
-</div>
-
-<!-- Q30 -->
-<div class="card" id="q30">
-  <div class="q-num">30</div><span class="q-type">Sufixos -ADA/-ADO</span>
-  <div class="q-text">Qual é o significado da expressão "noite estrelada"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q30" data-correct="true" data-msg="Isso mesmo! 'Estrelada' indica a característica de ter muitas estrelas visíveis." data-tip="">Uma noite com muitas estrelas visíveis no céu</button>
-    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! Não tem relação com o clima." data-tip="💡 Pense no substantivo 'estrela' virando característica.">Uma noite muito fria</button>
-    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! Não tem relação com o horário." data-tip="💡 Pense no substantivo 'estrela' virando característica.">Uma noite sem Lua</button>
-  </div>
-  <div class="feedback" id="fb-q30"></div>
-</div>
-
-<!-- Q31 -->
-<div class="card" id="q31">
-  <div class="q-num">31</div><span class="q-type">Sufixos -ADA/-ADO</span>
-  <div class="q-text">Ao transformar o substantivo "ânimo" com o sufixo -ADO, obtemos a palavra:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! Ânimo + ado = animado." data-tip="">Animado</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! Essa palavra não usa o sufixo -ADO corretamente." data-tip="💡 Pense em 'turma animada'.">Animoso</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! Essa palavra não existe." data-tip="💡 Pense em 'turma animada'.">Animento</button>
-  </div>
-  <div class="feedback" id="fb-q31"></div>
-</div>
-
-<!-- Q32 blank -->
-<div class="card" id="q32">
-  <div class="q-num">32</div><span class="q-type">Ditongos</span>
-  <div class="q-text">Complete: o encontro de duas vogais numa mesma sílaba é chamado de <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q32" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q32">Verificar resposta</button>
-  <div class="feedback" id="fb-q32"></div>
-</div>
-
-<!-- Q33 -->
-<div class="card" id="q33">
-  <div class="q-num">33</div><span class="q-type">Ditongos</span>
-  <div class="q-text">Qual destas palavras tem ditongo?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q33" data-correct="true" data-msg="Isso mesmo! 'Animais' tem o ditongo 'ai' (ani-mais)." data-tip="">Animais</button>
-    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Floresta' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe a palavra em sílabas: a-ni-mais.">Floresta</button>
-    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Parque' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe a palavra em sílabas: a-ni-mais.">Parque</button>
-  </div>
-  <div class="feedback" id="fb-q33"></div>
-</div>
-
-<!-- Reading passage -->
-<div class="card" id="reading-passage-2">
-  <div class="q-type">📖 Leitura — A Tartaruga Precavida</div>
-  <div class="q-text" style="margin-top:8px;">Uma tartaruga vivia à beira de um lago e sempre carregava sua casca por perto, mesmo nos dias mais calmos. Um sapo curioso perguntou por que ela não deixava a casca de lado enquanto nadava.<br><br>
-  A tartaruga respondeu: "Quem tem pressa de se arrepender, corre sem pensar duas vezes."<br><br>
-  Pouco depois, uma garça sobrevoou o lago à procura de comida, e a tartaruga rapidamente se escondeu dentro da casca, segura.</div>
-</div>
-
-<!-- Q34 -->
-<div class="card" id="q34b">
-  <div class="q-num">34</div><span class="q-type">Interpretação de título</span>
-  <div class="q-text">No título "A Tartaruga Precavida", a palavra "precavida" significa que a personagem era:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q34b" data-correct="true" data-msg="Isso mesmo! Precavida significa cuidadosa, que se prevenia de perigos." data-tip="">Cuidadosa, que se prevenia de perigos</button>
-    <button class="opt-btn" data-q="q34b" data-correct="false" data-msg="Errado! Precavida não tem esse sentido." data-tip="💡 Pense em por que ela carregava a casca por perto sempre.">Distraída e desatenta</button>
-    <button class="opt-btn" data-q="q34b" data-correct="false" data-msg="Errado! Precavida não tem esse sentido." data-tip="💡 Pense em por que ela carregava a casca por perto sempre.">Apressada e afobada</button>
-  </div>
-  <div class="feedback" id="fb-q34b"></div>
-</div>
-
-<!-- Q35 -->
-<div class="card" id="q35b">
-  <div class="q-num">35</div><span class="q-type">Interpretação de expressão</span>
-  <div class="q-text">Na fala da tartaruga, "quem tem pressa de se arrepender, corre sem pensar duas vezes" quer dizer que:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q35b" data-correct="true" data-msg="Isso mesmo! Agir sem cuidado pode trazer arrependimento depois." data-tip="">Agir sem cuidado pode trazer arrependimento depois</button>
-    <button class="opt-btn" data-q="q35b" data-correct="false" data-msg="Errado! Não é sobre velocidade física." data-tip="💡 Pense na relação entre pressa e arrependimento.">É sempre bom correr o mais rápido possível</button>
-    <button class="opt-btn" data-q="q35b" data-correct="false" data-msg="Errado! Não é sobre isso." data-tip="💡 Pense na relação entre pressa e arrependimento.">Nadar é mais perigoso que correr</button>
-  </div>
-  <div class="feedback" id="fb-q35b"></div>
-</div>
-
-<!-- Q36 blank -->
-<div class="card" id="q36b">
-  <div class="q-num">36</div><span class="q-type">Interpretação</span>
-  <div class="q-text">Complete: no texto, o animal que ameaçava a tartaruga era a <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q36b" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q36b">Verificar resposta</button>
-  <div class="feedback" id="fb-q36b"></div>
-</div>
-
-<!-- Q37 -->
-<div class="card" id="q37">
-  <div class="q-num">37</div><span class="q-type">Interpretação de assunto</span>
-  <div class="q-text">Qual é o assunto principal desse texto?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q37" data-correct="true" data-msg="Isso mesmo! O texto mostra a importância de ser precavido." data-tip="">A importância de ser precavido e cuidadoso</button>
-    <button class="opt-btn" data-q="q37" data-correct="false" data-msg="Errado! O texto não é sobre isso." data-tip="💡 Pense no que a tartaruga fazia sempre, com a casca por perto.">A vida dos sapos em um lago</button>
-    <button class="opt-btn" data-q="q37" data-correct="false" data-msg="Errado! O texto não é sobre isso." data-tip="💡 Pense no que a tartaruga fazia sempre, com a casca por perto.">Como as garças caçam peixes</button>
-  </div>
-  <div class="feedback" id="fb-q37"></div>
-</div>
-
-<!-- Q38 -->
-<div class="card" id="q38">
-  <div class="q-num">38</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Na palavra "arrepender", o R representa um som:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q38" data-correct="true" data-msg="Isso mesmo! Por isso se escreve com RR — som forte entre vogais." data-tip="">Forte (por isso se escreve com RR)</button>
-    <button class="opt-btn" data-q="q38" data-correct="false" data-msg="Errado! Se fosse fraco, se escreveria com um R só." data-tip="💡 Observe: a palavra tem duas letras R juntas.">Fraco (por isso se escreve com um R só)</button>
-    <button class="opt-btn" data-q="q38" data-correct="false" data-msg="Errado! A palavra não tem R no início." data-tip="💡 Observe: a palavra tem duas letras R juntas.">R inicial</button>
-  </div>
-  <div class="feedback" id="fb-q38"></div>
-</div>
-
-<!-- Q39 -->
-<div class="card" id="q39">
-  <div class="q-num">39</div><span class="q-type">Verbete</span>
-  <div class="q-text">Ao procurar a palavra "precavida" no dicionário, você encontraria um texto chamado:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q39" data-correct="true" data-msg="Isso mesmo! O dicionário traz verbetes." data-tip="">Verbete</button>
-    <button class="opt-btn" data-q="q39" data-correct="false" data-msg="Errado! Diário é outro gênero textual." data-tip="💡 Pense no nome do texto do dicionário que explica uma palavra.">Diário</button>
-    <button class="opt-btn" data-q="q39" data-correct="false" data-msg="Errado! Tirinha é outro gênero textual." data-tip="💡 Pense no nome do texto do dicionário que explica uma palavra.">Tirinha</button>
-  </div>
-  <div class="feedback" id="fb-q39"></div>
-</div>
-
-<!-- Q40 -->
-<div class="card" id="q40">
-  <div class="q-num">40</div><span class="q-type">Verbo AM/ÃO</span>
-  <div class="q-text">Complete: "Amanhã, as tartarugas ___ mais cuidado com os predadores." (ter) — qual terminação está correta?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q40" data-correct="true" data-msg="Isso mesmo! 'Amanhã' pede o futuro: terão." data-tip="">-ÃO (terão)</button>
-    <button class="opt-btn" data-q="q40" data-correct="false" data-msg="Errado! Essa terminação é do passado." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">-AM (tiveram)</button>
-    <button class="opt-btn" data-q="q40" data-correct="false" data-msg="Errado! Essa não é uma terminação verbal estudada." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">-ER (ter)</button>
-  </div>
-  <div class="feedback" id="fb-q40"></div>
-</div>
-
-<!-- Q41 -->
-<div class="card" id="q41">
-  <div class="q-num">41</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">A palavra "perto" se encaixa em qual categoria de R?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q41" data-correct="true" data-msg="Isso mesmo! O R fica entre a vogal E e a consoante T, sem formar encontro consonantal." data-tip="">R entre consoante e vogal (ou vogal e consoante)</button>
-    <button class="opt-btn" data-q="q41" data-correct="false" data-msg="Errado! O R não está no início da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'perto'.">R inicial</button>
-    <button class="opt-btn" data-q="q41" data-correct="false" data-msg="Errado! O R não é a última letra da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'perto'.">R no final</button>
-  </div>
-  <div class="feedback" id="fb-q41"></div>
-</div>
-
-<!-- Q42 reflection -->
-<div class="card reflect" id="q42">
-  <div class="q-num">42</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
-  <textarea class="blank-input" id="inp-q42" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q42">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q42"></div>
-</div>
-
-<!-- Q43 reflection -->
-<div class="card reflect" id="q43">
-  <div class="q-num">43</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
-  <textarea class="blank-input" id="inp-q43" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q43">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q43"></div>
-</div>
-
-<!-- Q44 reflection -->
-<div class="card reflect" id="q44">
-  <div class="q-num">44</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
-  <textarea class="blank-input" id="inp-q44" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q44">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q44"></div>
-</div>
-
+<div class="info-banner">💡 As questões de <strong>1 a 34</strong> valem ponto. As <strong>4 últimas</strong> são de reflexão (sem certo ou errado): é só conferir a sugestão!</div>
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 34</span></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Leitura 1 — Cordelzinho do quintal</div><div class="q-text" style="margin-top:8px">No quintal do Seu Zé<br>Tinha vaso com água parada,<br>O mosquito da dengue<br>Fez ali a sua morada.<br><br>Veio a filha de Seu Zé<br>Com um conselho de amor:<br>&quot;Vamos virar os vasos, pai,<br>Pra acabar com esse terror!&quot;</div></div>
+<div class="card" id="q1" data-type="mc" data-ans="o cuidado com a água parada para evitar a dengue" data-exp="O cordel alerta sobre água parada e o mosquito da dengue."><div class="q-num">1</div><span class="q-type">Leitura 1</span><div class="q-text">Qual é o assunto desse cordel?</div><div class="options"><button class="opt-btn" data-c="0">uma festa no quintal</button><button class="opt-btn" data-c="0">a venda de vasos</button><button class="opt-btn" data-c="1">o cuidado com a água parada para evitar a dengue</button></div><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="mc" data-ans="2 estrofes" data-exp="Há dois blocos de versos."><div class="q-num">2</div><span class="q-type">Leitura 1</span><div class="q-text">Quantas estrofes tem o cordelzinho?</div><div class="options"><button class="opt-btn" data-c="0">8 estrofes</button><button class="opt-btn" data-c="1">2 estrofes</button><button class="opt-btn" data-c="0">4 estrofes</button></div><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="mc" data-ans="4 versos" data-exp="Cada estrofe tem 4 versos (linhas)."><div class="q-num">3</div><span class="q-type">Leitura 1</span><div class="q-text">Quantos versos tem cada estrofe?</div><div class="options"><button class="opt-btn" data-c="1">4 versos</button><button class="opt-btn" data-c="0">8 versos</button><button class="opt-btn" data-c="0">2 versos</button></div><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="mc" data-ans="parada e morada" data-exp="Parada/morada terminam com o mesmo som."><div class="q-num">4</div><span class="q-type">Leitura 1</span><div class="q-text">Qual par de palavras forma rima na primeira estrofe?</div><div class="options"><button class="opt-btn" data-c="0">quintal e vaso</button><button class="opt-btn" data-c="0">dengue e ali</button><button class="opt-btn" data-c="1">parada e morada</button></div><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="bl" data-acc="rima" data-ans="rima" data-exp="Terminam com o mesmo som."><div class="q-num">5</div><span class="q-type">Leitura 1</span><div class="q-text">Complete: as palavras &quot;amor&quot; e &quot;terror&quot; formam uma <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q6" data-type="mc" data-ans="o lugar onde o mosquito passou a viver" data-exp="Morada = lugar onde se mora, aqui usado de forma criativa."><div class="q-num">6</div><span class="q-type">Leitura 1</span><div class="q-text">Em &quot;O mosquito da dengue fez ali a sua morada&quot;, a palavra &quot;morada&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">uma festa do mosquito</button><button class="opt-btn" data-c="0">uma casa de tijolos construída por ele</button><button class="opt-btn" data-c="1">o lugar onde o mosquito passou a viver</button></div><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="mc" data-ans="virar os vasos para acabar com a água parada" data-exp="Ela propõe virar os vasos."><div class="q-num">7</div><span class="q-type">Leitura 1</span><div class="q-text">O conselho da filha foi:</div><div class="options"><button class="opt-btn" data-c="0">comprar mais vasos</button><button class="opt-btn" data-c="1">virar os vasos para acabar com a água parada</button><button class="opt-btn" data-c="0">mudar de casa</button></div><div class="feedback"></div></div>
+<div class="card" id="q8" data-type="mc" data-ans="Nordeste" data-exp="Cordel é muito comum no Nordeste."><div class="q-num">8</div><span class="q-type">Leitura 1</span><div class="q-text">Em qual região do Brasil esse tipo de texto (cordel) é mais comum?</div><div class="options"><button class="opt-btn" data-c="0">Sul</button><button class="opt-btn" data-c="0">Sudeste</button><button class="opt-btn" data-c="1">Nordeste</button></div><div class="feedback"></div></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Leitura 2 — Cartaz da escola</div><div class="q-text" style="margin-top:8px">CAMPANHA DO AGASALHO<br>Dê calor a quem tem frio!<br>Doe um agasalho que você não usa mais.<br>Entregue na secretaria da escola até 30 de junho.</div></div>
+<div class="card" id="q9" data-type="mc" data-ans="convencer as pessoas a doar agasalhos" data-exp="Anúncio de campanha social."><div class="q-num">9</div><span class="q-type">Leitura 2</span><div class="q-text">Qual é a finalidade desse cartaz?</div><div class="options"><button class="opt-btn" data-c="1">convencer as pessoas a doar agasalhos</button><button class="opt-btn" data-c="0">vender casacos</button><button class="opt-btn" data-c="0">ensinar a costurar</button></div><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="mc" data-ans="&quot;Dê calor a quem tem frio!&quot;" data-exp="É a frase de destaque."><div class="q-num">10</div><span class="q-type">Leitura 2</span><div class="q-text">Qual é a frase principal, que causa impacto?</div><div class="options"><button class="opt-btn" data-c="0">&quot;até 30 de junho&quot;</button><button class="opt-btn" data-c="1">&quot;Dê calor a quem tem frio!&quot;</button><button class="opt-btn" data-c="0">&quot;Entregue na secretaria da escola&quot;</button></div><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="Doe" data-exp="Pede uma ação ao leitor."><div class="q-num">11</div><span class="q-type">Leitura 2</span><div class="q-text">Qual destas é uma palavra de comando no cartaz?</div><div class="options"><button class="opt-btn" data-c="0">escola</button><button class="opt-btn" data-c="0">agasalho</button><button class="opt-btn" data-c="1">Doe</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="figurado — ajudar com roupa e também com carinho" data-exp="Calor aqui lembra acolhimento, além de aquecer."><div class="q-num">12</div><span class="q-type">Leitura 2</span><div class="q-text">&quot;Dê calor a quem tem frio&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="1">figurado — ajudar com roupa e também com carinho</button><button class="opt-btn" data-c="0">nenhum</button><button class="opt-btn" data-c="0">comum — dar uma chama de fogo</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="na secretaria da escola" data-exp="Informação do cartaz."><div class="q-num">13</div><span class="q-type">Leitura 2</span><div class="q-text">Onde as pessoas devem entregar o agasalho?</div><div class="options"><button class="opt-btn" data-c="1">na secretaria da escola</button><button class="opt-btn" data-c="0">na praça</button><button class="opt-btn" data-c="0">no mercado</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="30 de junho" data-exp="Informação do cartaz."><div class="q-num">14</div><span class="q-type">Leitura 2</span><div class="q-text">Até quando é a campanha?</div><div class="options"><button class="opt-btn" data-c="1">30 de junho</button><button class="opt-btn" data-c="0">1º de junho</button><button class="opt-btn" data-c="0">30 de julho</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="As crianças" data-exp="Quem pintou? As crianças."><div class="q-num">15</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;As crianças pintaram o muro da escola&quot;, o sujeito é:</div><div class="options"><button class="opt-btn" data-c="1">As crianças</button><button class="opt-btn" data-c="0">pintaram</button><button class="opt-btn" data-c="0">o muro da escola</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="pintaram" data-exp="Verbo = ação."><div class="q-num">16</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;As crianças pintaram o muro da escola&quot;, o verbo é:</div><div class="options"><button class="opt-btn" data-c="0">escola</button><button class="opt-btn" data-c="0">As crianças</button><button class="opt-btn" data-c="1">pintaram</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="o muro da escola" data-exp="O que pintaram? O muro da escola."><div class="q-num">17</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;As crianças pintaram o muro da escola&quot;, o complemento é:</div><div class="options"><button class="opt-btn" data-c="0">pintaram</button><button class="opt-btn" data-c="1">o muro da escola</button><button class="opt-btn" data-c="0">As crianças</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="divertida" data-exp="Divertida indica característica da história."><div class="q-num">18</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;A professora Ana contou uma história divertida&quot;, o adjetivo é:</div><div class="options"><button class="opt-btn" data-c="0">Ana</button><button class="opt-btn" data-c="1">divertida</button><button class="opt-btn" data-c="0">contou</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="pequeno" data-exp="Pequeno é característica do cachorro."><div class="q-num">19</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;O cachorro pequeno correu pelo parque&quot;, o adjetivo é:</div><div class="options"><button class="opt-btn" data-c="1">pequeno</button><button class="opt-btn" data-c="0">correu</button><button class="opt-btn" data-c="0">parque</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="A e uma" data-exp="Artigos: A (a professora) e uma (uma história)."><div class="q-num">20</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;A professora Ana contou uma história divertida&quot;, quais são os artigos?</div><div class="options"><button class="opt-btn" data-c="0">contou e divertida</button><button class="opt-btn" data-c="0">Ana e professora</button><button class="opt-btn" data-c="1">A e uma</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="sigla" data-exp="Letras iniciais de um órgão."><div class="q-num">21</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;IBGE&quot; (Instituto Brasileiro de Geografia e Estatística) é uma:</div><div class="options"><button class="opt-btn" data-c="0">abreviatura</button><button class="opt-btn" data-c="0">abreviação</button><button class="opt-btn" data-c="1">sigla</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="abreviatura" data-exp="Termina com ponto."><div class="q-num">22</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Av.&quot; (avenida) é uma:</div><div class="options"><button class="opt-btn" data-c="0">abreviação</button><button class="opt-btn" data-c="0">sigla</button><button class="opt-btn" data-c="1">abreviatura</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="abreviação" data-exp="Não tem ponto."><div class="q-num">23</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Vc&quot; (você) escrito em mensagens é uma:</div><div class="options"><button class="opt-btn" data-c="1">abreviação</button><button class="opt-btn" data-c="0">abreviatura</button><button class="opt-btn" data-c="0">sigla</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="Organização das Nações Unidas" data-exp="ONU = Organização das Nações Unidas."><div class="q-num">24</div><span class="q-type">Siglas e abreviações</span><div class="q-text">A sigla ONU significa:</div><div class="options"><button class="opt-btn" data-c="0">Obra Nacional Urbana</button><button class="opt-btn" data-c="0">Ordem Nacional Unida</button><button class="opt-btn" data-c="1">Organização das Nações Unidas</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="ele está distraído" data-exp="Cabeça nas nuvens = distraído."><div class="q-num">25</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Ele está com a cabeça nas nuvens.&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">ele está voando de avião</button><button class="opt-btn" data-c="1">ele está distraído</button><button class="opt-btn" data-c="0">ele está sem chapéu</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="o tempo passa muito rápido" data-exp="Sentido figurado."><div class="q-num">26</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;O tempo voa!&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">o tempo está ventando</button><button class="opt-btn" data-c="1">o tempo passa muito rápido</button><button class="opt-btn" data-c="0">o tempo tem asas</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="comum (real)" data-exp="Pássaros realmente voam."><div class="q-num">27</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Os pássaros voam alto.&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">figurado</button><button class="opt-btn" data-c="0">imaginário</button><button class="opt-btn" data-c="1">comum (real)</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="estou muito triste" data-exp="É uma forma figurada de dizer que está triste."><div class="q-num">28</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Meu coração está em pedaços.&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">estou com fome</button><button class="opt-btn" data-c="1">estou muito triste</button><button class="opt-btn" data-c="0">meu coração quebrou de verdade</button></div><div class="feedback"></div></div>
+<div class="card" id="q29" data-type="mc" data-ans="Verdadeiro" data-exp="Ex.: Dr., Pág."><div class="q-num">29</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: abreviatura termina sempre com ponto.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q30" data-type="mc" data-ans="Verdadeiro" data-exp="Ex.: SUS, PM."><div class="q-num">30</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: sigla é formada pelas letras ou sílabas iniciais de palavras.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q31" data-type="mc" data-ans="Falso" data-exp="Cordel tem estrofes e versos."><div class="q-num">31</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: o cordel é feito de introdução, desenvolvimento e conclusão em parágrafos.</div><div class="options"><button class="opt-btn" data-c="0">Verdadeiro</button><button class="opt-btn" data-c="1">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q32" data-type="mc" data-ans="Verdadeiro" data-exp="Ex.: combate à dengue, doação de alimentos."><div class="q-num">32</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: um anúncio de campanha pode divulgar uma causa social.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q33" data-type="mc" data-ans="Falso" data-exp="O sujeito é de quem se fala. O que se fala é o verbo e o complemento."><div class="q-num">33</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: o sujeito de uma frase é &quot;o que se fala&quot; sobre alguém.</div><div class="options"><button class="opt-btn" data-c="0">Verdadeiro</button><button class="opt-btn" data-c="1">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q34" data-type="mc" data-ans="Verdadeiro" data-exp="Quer dizer acertar exatamente."><div class="q-num">34</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: &quot;Acertar na mosca&quot; é uma expressão em sentido figurado.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card reflect" id="q35" data-type="rf" data-model="Sugestão: &quot;Feche a torneira: cada gota conta!&quot; Qualquer frase curta, que peça uma ação, vale."><div class="q-num">35</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Crie uma frase de impacto para uma campanha contra o desperdício de água.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q36" data-type="rf" data-model="Sugestão: comum — &quot;Lavei o prato depois do almoço.&quot; Figurado — &quot;Esse jogo foi um prato cheio de emoção.&quot;"><div class="q-num">36</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva duas frases usando a palavra &quot;prato&quot;: uma com sentido comum e outra com sentido figurado.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q37" data-type="rf" data-model="Sugestão: &quot;A turma (sujeito) visitou (verbo) o museu (complemento).&quot;"><div class="q-num">37</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva uma frase e indique o sujeito, o verbo e o complemento.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q38" data-type="rf" data-model="Sugestão: sigla — SUS (letras iniciais); abreviatura — Dr. (termina com ponto); abreviação — refri (reduzida, sem ponto)."><div class="q-num">38</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Dê um exemplo de sigla, de abreviatura e de abreviação e explique a diferença entre elas.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="nivel2_intermediario.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="gabarito.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="nivel2_intermediario.html" class="btn-prev">← Nível 2</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="gabarito.html" class="btn-next">📋 Gabarito →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-var score = 0;
-var answered = {};
-var total = 41;
-
-var blankCfg = {
-  'q3':  { accepts: ['isolamento social','isolamento','pandemia'], ok: 'Isso mesmo! O ano de 2020 foi marcado pelo isolamento social (pandemia), o que inspirou o projeto.', nok: 'A resposta correta é: isolamento social (pandemia).', tip: '💡 Pense no motivo pelo qual as crianças ficaram mais tempo em casa em 2020.' },
-  'q6':  { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
-  'q8':  { accepts: ['final','fim'], ok: 'Isso mesmo! Contamos sempre do final para o início da palavra.', nok: 'A resposta correta é: final (ou fim).', tip: '💡 Pense em contar as sílabas de trás para frente.' },
-  'q11': { accepts: ['caro'], ok: 'Isso mesmo! Caro (som fraco entre vogais) se escreve com um R só.', nok: 'A resposta correta é: caro.', tip: '💡 Compare com "carro" — som forte, RR.' },
-  'q14': { accepts: ['as arvores','as árvores','arvores','árvores'], ok: 'Isso mesmo! "As árvores" é o sujeito, que vem antes do verbo.', nok: 'A resposta correta é: as árvores.', tip: '💡 Pense em quem pratica a ação de "ficar verde".' },
-  'q17': { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
-  'q22': { accepts: ['voltaram'], ok: 'Isso mesmo! Voltaram está no passado (-AM).', nok: 'A resposta correta é: voltaram.', tip: '💡 "No mês passado" indica que já aconteceu.' },
-  'q26': { accepts: ['rimas','rima'], ok: 'Isso mesmo! Versos com sons parecidos no final formam as rimas.', nok: 'A resposta correta é: rimas.', tip: '💡 Pense em palavras que terminam com o mesmo som.' },
-  'q29': { accepts: ['ss'], ok: 'Isso mesmo! Pessoa se escreve com SS.', nok: 'A resposta correta é: SS.', tip: '💡 Pense nas duas letras iguais juntas.' },
-  'q32': { accepts: ['ditongo'], ok: 'Isso mesmo! Esse encontro de vogais na mesma sílaba é o ditongo.', nok: 'A resposta correta é: ditongo.', tip: '💡 Pense em palavras como "céu" e "noite".' },
-  'q36b': { accepts: ['garca','garça'], ok: 'Isso mesmo! A garça era o animal que ameaçava a tartaruga.', nok: 'A resposta correta é: garça.', tip: '💡 Releia o texto: qual animal sobrevoou o lago à procura de comida?' },
-};
-
-var reflectionModel = {
-  'q42': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
-  'q43': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
-  'q44': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
-};
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
+var total = 34, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
   });
 });
-
-Object.keys(blankCfg).forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  if (!btn) return;
-  btn.addEventListener('click', function() {
-    if (answered[qid]) return;
-    answered[qid] = true;
-    btn.disabled = true;
-    var inp = document.getElementById('inp-' + qid);
-    var val = inp.value.trim().toLowerCase().replace(/[.!?]$/, '');
-    var cfg = blankCfg[qid];
-    if (cfg.accepts.indexOf(val) !== -1) {
-      inp.classList.add('correct-input'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, cfg.ok, '', '');
-    } else {
-      inp.classList.add('wrong-input');
-      showFeedback(qid, false, '', cfg.nok, cfg.tip);
-    }
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
   });
 });
-
-['q42','q43','q44'].forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  btn.addEventListener('click', function() {
-    btn.disabled = true;
-    var fb = document.getElementById('fb-' + qid);
-    fb.innerHTML = '<span class="fb-answer">💡 ' + reflectionModel[qid] + '</span>';
-    fb.className = 'feedback show model';
-  });
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
 });
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Sensacional! Você dominou o nível avançado! 🌟'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Incrível! Quase perfeito, mande ver na prova! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está pronta(o) para a prova! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Releia o resumo com calma!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Volte ao resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
   document.getElementById('resultGrade').textContent = score + ' / ' + total;
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
-  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões que valem ponto.';
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
+  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
   panel.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -761,25 +185,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Portugues_Nivel3_Avancado.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Portugues_Nivel3_Avancado.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>

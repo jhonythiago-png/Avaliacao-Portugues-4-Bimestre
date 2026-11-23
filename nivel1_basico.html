@@ -1,614 +1,186 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>⭐ Nível 1 – Básico</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>⭐ Nível 1 — Básico – Português</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; min-height: 100vh; padding-bottom: 40px; }
-.top-nav { background: #241638; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #7c3aed; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #7c3aed; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f2ff; color: #2a1a4a; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #3b1d6e; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #d8b4fe; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #7c3aed; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #7c3aed; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #7c3aed; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,#7c3aed,#a855f7); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.85); margin-top: 4px; }
-.level-tag { display: inline-block; background: rgba(255,255,255,0.25); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #7c3aed; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,#7c3aed,#ec4899); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(124,58,237,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(124,58,237,0.7); cursor: pointer; }
-.score-bar { background: white; border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: #888; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #7c3aed; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #7c3aed; cursor: pointer; }
+.info-banner { background: #ffffff; border: 1px solid #e6d9fb; border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #7c3aed; }
+.score-bar { background: #ffffff; border: 1px solid #e6d9fb; border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: #7a6a9a; }
 .score-num { font-size: 1.4rem; font-weight: 900; color: #7c3aed; }
-.card { background: white; border: 1px solid #ecdcfa; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(124,58,237,0.08); border-left: 5px solid #7c3aed; }
-.q-num { background: linear-gradient(135deg,#7c3aed,#a855f7); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #333; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #7c3aed; font-weight: 700; }
+.card { background: #ffffff; border: 1px solid #e6d9fb; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #7c3aed; }
+.card.passage { border-left: 5px solid #7c3aed; }
+.q-num { background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #7c3aed; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: #faf6fd; border: 2px solid #ecdcfa; border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #444; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
+.opt-btn { background: #faf7ff; border: 2px solid #d9c8f7; border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #3a2a5a; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
 .opt-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
-.opt-btn.wrong   { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+.opt-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
 .opt-btn.disabled { pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input { background: #faf7ff; border: 1.5px solid #d9c8f7; border-radius: 10px; padding: 11px 13px; color: #2a1a4a; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #7c3aed; }
+.blank-input.correct-input { border-color: #28a745; }
+.blank-input.wrong-input { border-color: #dc3545; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#7c3aed,#ec4899); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #fff; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: #d4edda; border: 1px solid #28a745; color: #155724; }
+.feedback.ok { background: #d4edda; border: 1px solid #28a745; color: #155724; }
 .feedback.nok { background: #f8d7da; border: 1px solid #dc3545; color: #721c24; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #333; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#7c3aed,#16a34a); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: white; border: none; border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.model { background: #ffffff; border: 1px solid #7c3aed; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: #ffffff; border: 1px solid #e6d9fb; border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#7c3aed,#16a34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: #333; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: #888; margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #7c3aed; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#38bdf8,#1e3a8a); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(124,58,237,0.1); border: 1.5px solid rgba(124,58,237,0.25); color: #7c3aed !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(124,58,237,0.08); border: 1.5px solid rgba(124,58,237,0.2); color: #7c3aed !important; }
-.btn-next { background: linear-gradient(135deg,#7c3aed,#a855f7); color: white !important; }
-.btn-home-only { background: rgba(124,58,237,0.08); border: 1.5px solid rgba(124,58,237,0.2); color: #7c3aed !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #7c3aed; }
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #7c3aed; color: #7c3aed !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #7c3aed; color: #7c3aed; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
 body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
-body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-body.pdf-export .card { border: 1px solid #ccc !important; }
-body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-body.pdf-export .feedback { display: none !important; }
-body.pdf-export .header { background: white !important; border-bottom: 2px solid #7c3aed !important; }
-body.pdf-export .header h1, body.pdf-export .header p, body.pdf-export .level-tag { color: #111 !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
+body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #7c3aed !important; }
 body.pdf-export .credit { color: #888 !important; }
-</style>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">⭐ Nível 1 — Básico</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">📖 Avaliação de Português — Nível 1</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 1</div>
-  <h1>⭐ Básico</h1>
-  <p>Interpretação, R, sílaba tônica, verbos, verbete e mais — 36 questões</p>
-</div>
-
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">⭐ Nível 1 — Básico</span></div>
+<div class="exam-header"><div class="eh-title">📖 Avaliação de Português — Nível 1 — Básico</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 1 — Básico</div><h1>⭐ Nível 1 — Básico</h1><p>Campanhas, sentidos, siglas, frases e cordel — 46 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 36</span>
-</div>
 
-<!-- Q1 -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "ÂNGULO" (ÂN-gu-lo) tem a sílaba tônica na antepenúltima sílaba. Como ela é classificada?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! Sílaba tônica na antepenúltima posição = proparoxítona." data-tip="">Proparoxítona</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Paroxítona é quando a tônica está na penúltima sílaba." data-tip="💡 Conte as sílabas de trás para frente: lo (1ª), gu (2ª), ÂN (3ª).">Paroxítona</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Oxítona é quando a tônica está na última sílaba." data-tip="💡 Conte as sílabas de trás para frente: lo (1ª), gu (2ª), ÂN (3ª).">Oxítona</button>
-  </div>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Palavras com a sílaba tônica na ÚLTIMA sílaba são chamadas de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! Última sílaba tônica = oxítona." data-tip="">Oxítonas</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Paroxítona é a penúltima." data-tip="💡 Pense na palavra 'azul' — a-ZUL.">Paroxítonas</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Proparoxítona é a antepenúltima." data-tip="💡 Pense na palavra 'azul' — a-ZUL.">Proparoxítonas</button>
-  </div>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Palavras com a sílaba tônica na PENÚLTIMA sílaba são chamadas de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q3" data-correct="true" data-msg="Isso mesmo! Penúltima sílaba tônica = paroxítona." data-tip="">Paroxítonas</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Oxítona é a última." data-tip="💡 Pense na palavra 'marinha' — ma-RI-nha.">Oxítonas</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Proparoxítona é a antepenúltima." data-tip="💡 Pense na palavra 'marinha' — ma-RI-nha.">Proparoxítonas</button>
-  </div>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "TÁXI" (TÁ-xi) tem a sílaba tônica em qual posição?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! A última sílaba é 'xi', sem acento tônico." data-tip="💡 A palavra só tem duas sílabas: TÁ-xi.">Última</button>
-    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! TÁ é a penúltima sílaba, e é a tônica." data-tip="">Penúltima</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! A palavra só tem duas sílabas, não tem antepenúltima." data-tip="💡 A palavra só tem duas sílabas: TÁ-xi.">Antepenúltima</button>
-  </div>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Qual destas palavras é proparoxítona?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q5" data-correct="true" data-msg="Isso mesmo! É-po-ca tem a tônica na antepenúltima sílaba." data-tip="">Época</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! Vida é paroxítona (VI-da)." data-tip="💡 Conte as sílabas de 'época': É-po-ca.">Vida</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! Feliz é oxítona (fe-LIZ)." data-tip="💡 Conte as sílabas de 'época': É-po-ca.">Feliz</button>
-  </div>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">No início de uma palavra, o som do R é sempre:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q6" data-correct="true" data-msg="Isso mesmo! No início da palavra, o R sempre tem som forte." data-tip="">Forte</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! No início, o som do R é sempre forte." data-tip="💡 Pense na palavra 'rato' — como ela soa?">Fraco</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! O R sempre tem som, seja forte ou fraco." data-tip="💡 Pense na palavra 'rato' — como ela soa?">Não tem som</button>
-  </div>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Quando o R tem som forte e está ENTRE DUAS VOGAIS, escrevemos com:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q7" data-correct="true" data-msg="Isso mesmo! R forte entre vogais se escreve com RR." data-tip="">RR</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Um R só representa o som fraco entre vogais." data-tip="💡 Pense na palavra 'carro'!">R</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Sempre usamos letras para representar esse som." data-tip="💡 Pense na palavra 'carro'!">Nenhum dos dois</button>
-  </div>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">A palavra "carro" tem o R entre vogais com som forte. Por isso, se escreve com:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q8" data-correct="true" data-msg="Isso mesmo! Carro se escreve com RR." data-tip="">RR</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Um R só mudaria o som da palavra (como em 'caro')." data-tip="💡 Compare com a palavra 'caro' (som fraco, R só).">R</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Não existe essa combinação para esse som." data-tip="💡 Compare com a palavra 'caro' (som fraco, R só).">L</button>
-  </div>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">A palavra "caro" tem o R entre vogais com som fraco. Por isso, se escreve com:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! Som fraco entre vogais usa um R só." data-tip="">Um R só</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! RR representaria o som forte, como em 'carro'." data-tip="💡 Compare com a palavra 'carro' (som forte, RR).">RR</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Essa combinação não existe em português." data-tip="💡 Compare com a palavra 'carro' (som forte, RR).">Dois R separados por hífen</button>
-  </div>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">Um diário, como o da pesquisadora Maura, serve, entre outras coisas, para:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Diários servem para compartilhar vivências e sentimentos." data-tip="">Compartilhar vivências e sentimentos</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Diários pessoais não têm essa finalidade comercial." data-tip="💡 Pense no que a Maura escreveu sobre a viagem dela.">Vender produtos</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Diários pessoais não costumam ter esse foco." data-tip="💡 Pense no que a Maura escreveu sobre a viagem dela.">Anunciar notícias policiais</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">No texto "Diário de Maura", a autora escreveu sobre sua viagem para:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q11" data-correct="true" data-msg="Isso mesmo! Maura escreveu sobre sua viagem às Ilhas Galápagos." data-tip="">Galápagos</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! O diário fala sobre outro lugar." data-tip="💡 Pense nas tartarugas gigantes e nos albatrozes.">Rio de Janeiro</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! O diário fala sobre outro lugar." data-tip="💡 Pense nas tartarugas gigantes e nos albatrozes.">Europa</button>
-  </div>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">Mafalda é uma personagem de tirinhas criada pelo cartunista:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! Quino é o criador argentino de Mafalda." data-tip="">Quino</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Maurício de Sousa criou a Turma da Mônica." data-tip="💡 O cartunista é argentino, nascido em 1932.">Maurício de Sousa</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Walt Disney criou outros personagens famosos." data-tip="💡 O cartunista é argentino, nascido em 1932.">Walt Disney</button>
-  </div>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Para organizar bem uma frase, pensar em perguntas como "Quem? O quê? Quando?" ajuda a:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! Essas perguntas ajudam a montar frases com sentido completo." data-tip="">Montar a frase com sentido completo</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Essas perguntas não têm relação com o tamanho da frase." data-tip="💡 Pense em como organizar palavras soltas numa frase.">Deixar a frase mais curta</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Isso não tem relação com ortografia." data-tip="💡 Pense em como organizar palavras soltas numa frase.">Trocar as letras das palavras</button>
-  </div>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Na frase "A natureza abriu o sinal", a expressão "o sinal" vem depois do verbo e indica:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q14" data-correct="true" data-msg="Isso mesmo! 'O sinal' é o complemento, indicando o que foi aberto." data-tip="">O que foi aberto (complemento)</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Quem praticou a ação é 'a natureza', que vem antes do verbo." data-tip="💡 Pense em quem vem antes e o que vem depois do verbo 'abriu'.">Quem praticou a ação</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Essa frase não indica quando algo aconteceu." data-tip="💡 Pense em quem vem antes e o que vem depois do verbo 'abriu'.">Quando a ação aconteceu</button>
-  </div>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
-<!-- Q15 -->
-<div class="card" id="q15">
-  <div class="q-num">15</div><span class="q-type">Verbos</span>
-  <div class="q-text">O passado dos verbos geralmente termina em:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q15" data-correct="true" data-msg="Isso mesmo! O passado geralmente termina em -AM." data-tip="">-AM</button>
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! -ÃO é a terminação do futuro." data-tip="💡 Pense em 'eles jogARAM futebol ontem'.">-ÃO</button>
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Essa terminação não indica um tempo específico sozinha." data-tip="💡 Pense em 'eles jogARAM futebol ontem'.">-ER</button>
-  </div>
-  <div class="feedback" id="fb-q15"></div>
-</div>
-
-<!-- Q16 -->
-<div class="card" id="q16">
-  <div class="q-num">16</div><span class="q-type">Verbos</span>
-  <div class="q-text">O futuro dos verbos geralmente termina em:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! O futuro geralmente termina em -ÃO." data-tip="">-ÃO</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! -AM é a terminação do passado." data-tip="💡 Pense em 'eles almoçarÃO amanhã'.">-AM</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Essa terminação não indica futuro." data-tip="💡 Pense em 'eles almoçarÃO amanhã'.">-OU</button>
-  </div>
-  <div class="feedback" id="fb-q16"></div>
-</div>
-
-<!-- Q17 -->
-<div class="card" id="q17">
-  <div class="q-num">17</div><span class="q-type">O Verbete</span>
-  <div class="q-text">Um verbete é encontrado em qual tipo de texto?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q17" data-correct="true" data-msg="Isso mesmo! Verbetes aparecem em dicionários e enciclopédias." data-tip="">Dicionário ou enciclopédia</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Diários têm outra estrutura, sem definições de palavras." data-tip="💡 Pense em onde você procura o significado de uma palavra.">Diário pessoal</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Tirinhas contam cenas curtas com humor." data-tip="💡 Pense em onde você procura o significado de uma palavra.">Tirinha de quadrinhos</button>
-  </div>
-  <div class="feedback" id="fb-q17"></div>
-</div>
-
-<!-- Q18 -->
-<div class="card" id="q18">
-  <div class="q-num">18</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "ESPECIALISTA" (es-pe-cia-LIS-ta) tem a sílaba tônica na penúltima sílaba. Como se classifica?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Penúltima sílaba tônica = paroxítona." data-tip="">Paroxítona</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Oxítona é a última sílaba." data-tip="💡 Conte as sílabas de trás para frente: ta, LIS, cia, pe, es.">Oxítona</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Proparoxítona é a antepenúltima sílaba." data-tip="💡 Conte as sílabas de trás para frente: ta, LIS, cia, pe, es.">Proparoxítona</button>
-  </div>
-  <div class="feedback" id="fb-q18"></div>
-</div>
-
-<!-- Q19 -->
-<div class="card" id="q19">
-  <div class="q-num">19</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Um texto pessoal, com data, que relata vivências e sentimentos do dia a dia, é chamado de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q19" data-correct="true" data-msg="Isso mesmo! Diário é um texto pessoal, com data, sobre vivências do dia a dia." data-tip="">Diário</button>
-    <button class="opt-btn" data-q="q19" data-correct="false" data-msg="Errado! Tirinha é um texto curto em quadrinhos." data-tip="💡 Pense no diário da Maura sobre Galápagos.">Tirinha</button>
-    <button class="opt-btn" data-q="q19" data-correct="false" data-msg="Errado! Verbete explica o significado de uma palavra." data-tip="💡 Pense no diário da Maura sobre Galápagos.">Verbete</button>
-  </div>
-  <div class="feedback" id="fb-q19"></div>
-</div>
-
-<!-- Q20 -->
-<div class="card" id="q20">
-  <div class="q-num">20</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Um texto curto, em quadrinhos, geralmente com humor, é chamado de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q20" data-correct="true" data-msg="Isso mesmo! Tirinha é um texto narrativo curto em quadrinhos." data-tip="">Tirinha</button>
-    <button class="opt-btn" data-q="q20" data-correct="false" data-msg="Errado! Diário é um texto pessoal com data." data-tip="💡 Pense nas tirinhas da Mafalda.">Diário</button>
-    <button class="opt-btn" data-q="q20" data-correct="false" data-msg="Errado! Verbete explica o significado de uma palavra." data-tip="💡 Pense nas tirinhas da Mafalda.">Verbete</button>
-  </div>
-  <div class="feedback" id="fb-q20"></div>
-</div>
-
-<!-- Q21 -->
-<div class="card" id="q21">
-  <div class="q-num">21</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Um texto que explica o significado de uma palavra, como no dicionário, é chamado de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q21" data-correct="true" data-msg="Isso mesmo! Verbete explica o significado de uma palavra." data-tip="">Verbete</button>
-    <button class="opt-btn" data-q="q21" data-correct="false" data-msg="Errado! Diário é um texto pessoal com data." data-tip="💡 Pense em como o dicionário explica uma palavra.">Diário</button>
-    <button class="opt-btn" data-q="q21" data-correct="false" data-msg="Errado! Tirinha é um texto curto em quadrinhos." data-tip="💡 Pense em como o dicionário explica uma palavra.">Tirinha</button>
-  </div>
-  <div class="feedback" id="fb-q21"></div>
-</div>
-
-<!-- Q22 -->
-<div class="card" id="q22">
-  <div class="q-num">22</div><span class="q-type">Polissemia</span>
-  <div class="q-text">Quando uma palavra tem vários significados diferentes, dizemos que ela é:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q22" data-correct="true" data-msg="Isso mesmo! Uma palavra com vários significados é polissêmica." data-tip="">Polissêmica</button>
-    <button class="opt-btn" data-q="q22" data-correct="false" data-msg="Errado! Esse termo se refere à sílaba tônica." data-tip="💡 Pense na palavra 'vela', que pode ser parte do barco ou objeto que ilumina.">Oxítona</button>
-    <button class="opt-btn" data-q="q22" data-correct="false" data-msg="Errado! Esse termo se refere ao uso do R." data-tip="💡 Pense na palavra 'vela', que pode ser parte do barco ou objeto que ilumina.">Forte</button>
-  </div>
-  <div class="feedback" id="fb-q22"></div>
-</div>
-
-<!-- Q23 -->
-<div class="card" id="q23">
-  <div class="q-num">23</div><span class="q-type">Polissemia</span>
-  <div class="q-text">A palavra "vela" pode significar "parte do barco" ou "objeto que ilumina". Isso é um exemplo de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q23" data-correct="true" data-msg="Isso mesmo! Isso é polissemia." data-tip="">Polissemia</button>
-    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense em uma palavra com mais de um significado.">Sílaba tônica</button>
-    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense em uma palavra com mais de um significado.">Verbete</button>
-  </div>
-  <div class="feedback" id="fb-q23"></div>
-</div>
-
-<!-- Q24 -->
-<div class="card" id="q24">
-  <div class="q-num">24</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Qual destas palavras tem o som de S representado pela letra "Ç"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q24" data-correct="true" data-msg="Isso mesmo! Em 'cabeça', o som de S é representado por Ç." data-tip="">Cabeça</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! Em 'sapato', o som de S é representado por S." data-tip="💡 Pense na letra com o 'rabinho' embaixo.">Sapato</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! Em 'pessoa', o som de S é representado por SS." data-tip="💡 Pense na letra com o 'rabinho' embaixo.">Pessoa</button>
-  </div>
-  <div class="feedback" id="fb-q24"></div>
-</div>
-
-<!-- Q25 -->
-<div class="card" id="q25">
-  <div class="q-num">25</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Na palavra "nascimento", o som de S é representado por:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q25" data-correct="true" data-msg="Isso mesmo! Em 'nascimento', o som de S é representado por SC." data-tip="">SC</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Não é assim que se escreve essa palavra." data-tip="💡 Observe as letras antes do 'imento' em 'nascimento'.">SS</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Não é assim que se escreve essa palavra." data-tip="💡 Observe as letras antes do 'imento' em 'nascimento'.">XC</button>
-  </div>
-  <div class="feedback" id="fb-q25"></div>
-</div>
-
-<!-- Q26 -->
-<div class="card" id="q26">
-  <div class="q-num">26</div><span class="q-type">Sufixos -ADA/-ADO</span>
-  <div class="q-text">Ao acrescentar o sufixo -ADA à palavra "estrela", formamos a palavra:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q26" data-correct="true" data-msg="Isso mesmo! Estrela + ada = estrelada." data-tip="">Estrelada</button>
-    <button class="opt-btn" data-q="q26" data-correct="false" data-msg="Errado! Essa palavra não usa o sufixo -ADA corretamente." data-tip="💡 Pense em 'noite estrelada'.">Estrelado</button>
-    <button class="opt-btn" data-q="q26" data-correct="false" data-msg="Errado! Essa palavra não existe." data-tip="💡 Pense em 'noite estrelada'.">Estrelinha</button>
-  </div>
-  <div class="feedback" id="fb-q26"></div>
-</div>
-
-<!-- Q27 -->
-<div class="card" id="q27">
-  <div class="q-num">27</div><span class="q-type">Sufixos -ADA/-ADO</span>
-  <div class="q-text">O sufixo -ADA ou -ADO transforma um substantivo em:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q27" data-correct="true" data-msg="Isso mesmo! O sufixo -ADA/-ADO forma um adjetivo, indicando uma característica." data-tip="">Um adjetivo</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! Não forma um verbo." data-tip="💡 Pense em 'estrela' (substantivo) virando 'estrelada' (característica).">Um verbo</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! A palavra continua sendo uma palavra normal, apenas muda de classe." data-tip="💡 Pense em 'estrela' (substantivo) virando 'estrelada' (característica).">Uma sigla</button>
-  </div>
-  <div class="feedback" id="fb-q27"></div>
-</div>
-
-<!-- Q28 -->
-<div class="card" id="q28">
-  <div class="q-num">28</div><span class="q-type">Ditongos</span>
-  <div class="q-text">Ditongo é o encontro de duas vogais que ficam juntas em:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q28" data-correct="true" data-msg="Isso mesmo! Ditongo é o encontro de duas vogais numa mesma sílaba." data-tip="">Uma mesma sílaba</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! Se estivessem em sílabas diferentes, não seria ditongo." data-tip="💡 Pense na palavra 'noite': no-i-te? Não! NOI é uma sílaba só.">Duas sílabas diferentes</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! Ditongo é dentro de uma palavra, não entre palavras." data-tip="💡 Pense na palavra 'noite': no-i-te? Não! NOI é uma sílaba só.">Duas palavras diferentes</button>
-  </div>
-  <div class="feedback" id="fb-q28"></div>
-</div>
-
-<!-- Q29 -->
-<div class="card" id="q29">
-  <div class="q-num">29</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Qual destas palavras tem R inicial (no começo da palavra)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q29" data-correct="true" data-msg="Isso mesmo! 'Relógio' começa com R." data-tip="">Relógio</button>
-    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! O R está entre vogais aqui." data-tip="💡 Pense em qual palavra COMEÇA com a letra R.">Careta</button>
-    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! O R está no final aqui." data-tip="💡 Pense em qual palavra COMEÇA com a letra R.">Cantar</button>
-  </div>
-  <div class="feedback" id="fb-q29"></div>
-</div>
-
-<!-- Q30 -->
-<div class="card" id="q30">
-  <div class="q-num">30</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Qual destas palavras tem R fraco entre vogais (escrito com um R só)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q30" data-correct="true" data-msg="Isso mesmo! Em 'careta', o R está entre vogais com som fraco." data-tip="">Careta</button>
-    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! 'Correr' usa RR, som forte." data-tip="💡 Pense num R fraco, suave, entre duas vogais.">Correr</button>
-    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! 'Rainha' tem R inicial." data-tip="💡 Pense num R fraco, suave, entre duas vogais.">Rainha</button>
-  </div>
-  <div class="feedback" id="fb-q30"></div>
-</div>
-
-<!-- Q31 -->
-<div class="card" id="q31">
-  <div class="q-num">31</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Qual destas palavras usa RR (som forte entre vogais)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! 'Correr' tem RR, som forte entre vogais." data-tip="">Correr</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! 'Careta' tem R fraco, um R só." data-tip="💡 Pense na palavra com as duas letras R juntas.">Careta</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! 'Porta' está em outra categoria." data-tip="💡 Pense na palavra com as duas letras R juntas.">Porta</button>
-  </div>
-  <div class="feedback" id="fb-q31"></div>
-</div>
-
-<!-- Q32 -->
-<div class="card" id="q32">
-  <div class="q-num">32</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Qual destas palavras tem R "entre consoante e vogal" (categoria 4), SEM ser um encontro consonantal como TR ou PR?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q32" data-correct="true" data-msg="Isso mesmo! Em 'porta', o R fica entre a vogal O e a consoante T, sem formar TR ou PR." data-tip="">Porta</button>
-    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! 'Tronco' tem o encontro consonantal TR — não entra nessa categoria." data-tip="💡 Cuidado com a pegadinha: TR e PR são encontros consonantais.">Tronco</button>
-    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! 'Prato' tem o encontro consonantal PR — não entra nessa categoria." data-tip="💡 Cuidado com a pegadinha: TR e PR são encontros consonantais.">Prato</button>
-  </div>
-  <div class="feedback" id="fb-q32"></div>
-</div>
-
-<!-- Q33 -->
-<div class="card" id="q33">
-  <div class="q-num">33</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Qual destas palavras tem R no final?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q33" data-correct="true" data-msg="Isso mesmo! Em 'cantar', o R é a última letra." data-tip="">Cantar</button>
-    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Rato' tem R inicial." data-tip="💡 Pense em qual palavra TERMINA com R.">Rato</button>
-    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Careta' tem R entre vogais." data-tip="💡 Pense em qual palavra TERMINA com R.">Careta</button>
-  </div>
-  <div class="feedback" id="fb-q33"></div>
-</div>
-
-<!-- Q34 -->
-<div class="card" id="q34">
-  <div class="q-num">34</div><span class="q-type">Interpretação de título</span>
-  <div class="q-text">Se um texto se chama "O morcego astuto", a palavra "astuto" quer dizer que o morcego era:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q34" data-correct="true" data-msg="Isso mesmo! Astuto significa esperto, inteligente." data-tip="">Esperto</button>
-    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Astuto não tem esse sentido." data-tip="💡 Pense em um animal que usa a inteligência para se safar de perigos.">Lento</button>
-    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Astuto não tem esse sentido." data-tip="💡 Pense em um animal que usa a inteligência para se safar de perigos.">Triste</button>
-  </div>
-  <div class="feedback" id="fb-q34"></div>
-</div>
-
-<!-- Q35 -->
-<div class="card" id="q35">
-  <div class="q-num">35</div><span class="q-type">Interpretação de expressão</span>
-  <div class="q-text">Na frase "a fuinha tinha olhos ótimos", isso significa que ela:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q35" data-correct="true" data-msg="Isso mesmo! 'Olhos ótimos' significa que ela enxergava muito bem." data-tip="">Enxergava muito bem</button>
-    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Não é sobre o tamanho dos olhos." data-tip="💡 Pense no que 'ótimos' quer dizer sobre a visão dela.">Tinha olhos muito grandes</button>
-    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Não é sobre fome." data-tip="💡 Pense no que 'ótimos' quer dizer sobre a visão dela.">Estava com fome</button>
-  </div>
-  <div class="feedback" id="fb-q35"></div>
-</div>
-
-<!-- Q36 -->
-<div class="card" id="q36">
-  <div class="q-num">36</div><span class="q-type">Verbete</span>
-  <div class="q-text">Qual é o verbete correto para o verbo "lançar"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q36" data-correct="true" data-msg="Isso mesmo! Esse é o significado correto de 'lançar'." data-tip="">1. Jogar, atirar com força. 2. Mandar algo longe com força.</button>
-    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso descreve a palavra 'contemplar', não 'lançar'." data-tip="💡 Pense no significado de jogar algo com força.">1. Sentar e contemplar a natureza.</button>
-    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso descreve a palavra 'colocar', não 'lançar'." data-tip="💡 Pense no significado de jogar algo com força.">1. Colocar um objeto num lugar de preferência.</button>
-  </div>
-  <div class="feedback" id="fb-q36"></div>
-</div>
-
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 46</span></div>
+<div class="card" id="q1" data-type="mc" data-ans="divulgar um produto, serviço, marca, evento ou uma ideia/causa social" data-exp="Anúncio de campanha é uma peça criada para divulgar algo ou uma causa social."><div class="q-num">1</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Um anúncio de campanha serve para:</div><div class="options"><button class="opt-btn" data-c="1">divulgar um produto, serviço, marca, evento ou uma ideia/causa social</button><button class="opt-btn" data-c="0">contar a vida de uma pessoa famosa</button><button class="opt-btn" data-c="0">ensinar a fazer uma receita</button></div><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="mc" data-ans="motivar o leitor a doar alimentos" data-exp="A campanha quer convencer as pessoas a doar comida."><div class="q-num">2</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Na campanha &quot;Prato cheio&quot;, as palavras &quot;alimente&quot; e &quot;mate&quot; têm como objetivo principal:</div><div class="options"><button class="opt-btn" data-c="1">motivar o leitor a doar alimentos</button><button class="opt-btn" data-c="0">apresentar uma orientação sobre leis</button><button class="opt-btn" data-c="0">ensinar uma receita de feijão</button></div><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="mc" data-ans="pedir uma ação do leitor" data-exp="Palavra de comando pede que o leitor faça alguma coisa."><div class="q-num">3</div><span class="q-type">Anúncio de campanha</span><div class="q-text">As palavras de comando de um cartaz (como &quot;doe&quot; e &quot;participe&quot;) servem para:</div><div class="options"><button class="opt-btn" data-c="0">esconder o assunto</button><button class="opt-btn" data-c="0">enfeitar o cartaz</button><button class="opt-btn" data-c="1">pedir uma ação do leitor</button></div><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="mc" data-ans="frase principal que cause impacto e imagens que chamem a atenção" data-exp="Cartaz bom chama atenção: frase de impacto, cores, letras variadas e imagens."><div class="q-num">4</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Qual destes itens faz parte de um bom cartaz de campanha?</div><div class="options"><button class="opt-btn" data-c="1">frase principal que cause impacto e imagens que chamem a atenção</button><button class="opt-btn" data-c="0">letras pequenas e cinza</button><button class="opt-btn" data-c="0">textos enormes sem nenhuma imagem</button></div><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="mc" data-ans="o combate à dengue" data-exp="A campanha pede para combater o mosquito da dengue."><div class="q-num">5</div><span class="q-type">Anúncio de campanha</span><div class="q-text">O cartaz do mosquito da dengue é uma campanha sobre:</div><div class="options"><button class="opt-btn" data-c="0">doação de alimentos</button><button class="opt-btn" data-c="0">coleta seletiva do lixo</button><button class="opt-btn" data-c="1">o combate à dengue</button></div><div class="feedback"></div></div>
+<div class="card" id="q6" data-type="mc" data-ans="evitar utensílios com água parada" data-exp="Água parada é onde o mosquito se reproduz."><div class="q-num">6</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Para combater a dengue, o certo é:</div><div class="options"><button class="opt-btn" data-c="1">evitar utensílios com água parada</button><button class="opt-btn" data-c="0">guardar lixo no quintal</button><button class="opt-btn" data-c="0">deixar garrafas e vasos cheios de água</button></div><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="mc" data-ans="é usada de um jeito criativo, diferente do sentido comum" data-exp="No sentido figurado a palavra ganha uma ideia criativa, imaginária."><div class="q-num">7</div><span class="q-type">Sentido figurado</span><div class="q-text">Sentido figurado é quando uma palavra ou frase:</div><div class="options"><button class="opt-btn" data-c="1">é usada de um jeito criativo, diferente do sentido comum</button><button class="opt-btn" data-c="0">sempre significa o mesmo que no dicionário</button><button class="opt-btn" data-c="0">não quer dizer nada</button></div><div class="feedback"></div></div>
+<div class="card" id="q8" data-type="mc" data-ans="verdadeiro, real" data-exp="Comum ou literal = o que realmente aconteceu ou existe."><div class="q-num">8</div><span class="q-type">Sentido figurado</span><div class="q-text">Sentido comum (literal ou real) é o sentido:</div><div class="options"><button class="opt-btn" data-c="0">inventado</button><button class="opt-btn" data-c="0">imaginário</button><button class="opt-btn" data-c="1">verdadeiro, real</button></div><div class="feedback"></div></div>
+<div class="card" id="q9" data-type="mc" data-ans="nutrir (sentido comum)" data-exp="Aqui alimentar é comer coisas que nutrem."><div class="q-num">9</div><span class="q-type">Sentido figurado</span><div class="q-text">Em &quot;Alimente-se bem!&quot;, a palavra alimentar quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">cozinhar</button><button class="opt-btn" data-c="1">nutrir (sentido comum)</button><button class="opt-btn" data-c="0">participar (sentido figurado)</button></div><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="mc" data-ans="participar (sentido figurado)" data-exp="Alimentar uma ideia é participar dela, apoiar."><div class="q-num">10</div><span class="q-type">Sentido figurado</span><div class="q-text">Em &quot;Alimente essa ideia!&quot;, a palavra alimentar quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">comer muito</button><button class="opt-btn" data-c="1">participar (sentido figurado)</button><button class="opt-btn" data-c="0">nutrir (sentido comum)</button></div><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="figurado — ela não é uma planta de verdade" data-exp="É uma forma carinhosa de falar."><div class="q-num">11</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Filhinha, você é uma flor!&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">nenhum sentido</button><button class="opt-btn" data-c="0">comum — ela é uma planta</button><button class="opt-btn" data-c="1">figurado — ela não é uma planta de verdade</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="comum (real)" data-exp="É uma flor de verdade."><div class="q-num">12</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Uma flor para você!&quot; (dando uma flor de presente) está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">figurado</button><button class="opt-btn" data-c="1">comum (real)</button><button class="opt-btn" data-c="0">imaginário</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="ela é muito querida" data-exp="Menina dos olhos = pessoa muito querida."><div class="q-num">13</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Ela é a menina dos meus olhos!&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">ela mora dentro do olho</button><button class="opt-btn" data-c="1">ela é muito querida</button><button class="opt-btn" data-c="0">ela tem olhos de menina</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="real (literal)" data-exp="É uma informação verdadeira, sem imagem criativa."><div class="q-num">14</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;O carro do Arthur é vermelho.&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">imaginário</button><button class="opt-btn" data-c="0">figurado</button><button class="opt-btn" data-c="1">real (literal)</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="acertar exatamente" data-exp="Acertar na mosca = acertar em cheio."><div class="q-num">15</div><span class="q-type">Expressões</span><div class="q-text">&quot;Acertar na mosca&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="1">acertar exatamente</button><button class="opt-btn" data-c="0">errar feio</button><button class="opt-btn" data-c="0">bater numa mosca</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="sentir ciúme ou inveja" data-exp="É uma expressão para ciúme/inveja."><div class="q-num">16</div><span class="q-type">Expressões</span><div class="q-text">&quot;Ter dor de cotovelo&quot; é:</div><div class="options"><button class="opt-btn" data-c="0">machucar o braço</button><button class="opt-btn" data-c="0">dormir de lado</button><button class="opt-btn" data-c="1">sentir ciúme ou inveja</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="ajudar a resolver um problema" data-exp="Quem quebra o galho ajuda a resolver."><div class="q-num">17</div><span class="q-type">Expressões</span><div class="q-text">&quot;Quebrar o galho&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">quebrar uma árvore</button><button class="opt-btn" data-c="1">ajudar a resolver um problema</button><button class="opt-btn" data-c="0">fazer bagunça</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="desistir, deixar algo no meio do caminho" data-exp="É largar um projeto ou grupo na metade."><div class="q-num">18</div><span class="q-type">Expressões</span><div class="q-text">&quot;Abandonar o barco&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">descer de um barco de verdade</button><button class="opt-btn" data-c="0">comprar um barco</button><button class="opt-btn" data-c="1">desistir, deixar algo no meio do caminho</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="quero silêncio total" data-exp="Nem um pio = nenhum barulho."><div class="q-num">19</div><span class="q-type">Expressões</span><div class="q-text">&quot;Não quero ouvir nem um pio!&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">quero música alta</button><button class="opt-btn" data-c="0">quero ouvir passarinhos</button><button class="opt-btn" data-c="1">quero silêncio total</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="não lamentar depois algo que já não tem jeito" data-exp="Chorar o leite derramado é ficar lamentando o que já passou."><div class="q-num">20</div><span class="q-type">Expressões</span><div class="q-text">&quot;Depois não vai chorar o leite derramado!&quot; é um aviso para:</div><div class="options"><button class="opt-btn" data-c="0">comprar mais leite</button><button class="opt-btn" data-c="1">não lamentar depois algo que já não tem jeito</button><button class="opt-btn" data-c="0">não derramar leite no chão</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="uma forma reduzida formada pelas letras ou sílabas iniciais das palavras de um nome" data-exp="Ex.: SUS, CPF, PM."><div class="q-num">21</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Sigla é:</div><div class="options"><button class="opt-btn" data-c="0">uma forma reduzida que termina sempre com ponto</button><button class="opt-btn" data-c="1">uma forma reduzida formada pelas letras ou sílabas iniciais das palavras de um nome</button><button class="opt-btn" data-c="0">uma palavra escrita do jeito que se fala</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="Sistema Único de Saúde" data-exp="SUS = Sistema Único de Saúde."><div class="q-num">22</div><span class="q-type">Siglas e abreviações</span><div class="q-text">A sigla SUS significa:</div><div class="options"><button class="opt-btn" data-c="0">Serviço Urbano de Sociedade</button><button class="opt-btn" data-c="0">Sistema Único de Segurança</button><button class="opt-btn" data-c="1">Sistema Único de Saúde</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="CPF" data-exp="CPF é formada pelas letras iniciais de Cadastro de Pessoas Físicas."><div class="q-num">23</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Qual destas é uma sigla?</div><div class="options"><button class="opt-btn" data-c="1">CPF</button><button class="opt-btn" data-c="0">refri</button><button class="opt-btn" data-c="0">Pág.</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="um ponto" data-exp="Ex.: Pág., Dr., Dra., Prof."><div class="q-num">24</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Abreviatura é uma forma reduzida que termina sempre com:</div><div class="options"><button class="opt-btn" data-c="0">nenhum sinal</button><button class="opt-btn" data-c="1">um ponto</button><button class="opt-btn" data-c="0">uma vírgula</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="Prof." data-exp="Prof. tem ponto no final."><div class="q-num">25</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Qual destas é uma abreviatura?</div><div class="options"><button class="opt-btn" data-c="1">Prof.</button><button class="opt-btn" data-c="0">pq</button><button class="opt-btn" data-c="0">CNPJ</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="NÃO termina com ponto" data-exp="Ex.: game, tá, cê, refri."><div class="q-num">26</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Abreviação é uma forma reduzida que:</div><div class="options"><button class="opt-btn" data-c="0">termina sempre com ponto</button><button class="opt-btn" data-c="1">NÃO termina com ponto</button><button class="opt-btn" data-c="0">é formada só por letras maiúsculas</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="refri" data-exp="Refri (refrigerante) é cortada e não tem ponto."><div class="q-num">27</div><span class="q-type">Siglas e abreviações</span><div class="q-text">Qual destas é uma abreviação?</div><div class="options"><button class="opt-btn" data-c="1">refri</button><button class="opt-btn" data-c="0">Dr.</button><button class="opt-btn" data-c="0">PM</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="abreviação" data-exp="Não tem ponto nem é formada por letras iniciais."><div class="q-num">28</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Game&quot; no lugar de &quot;videogame&quot; é:</div><div class="options"><button class="opt-btn" data-c="1">abreviação</button><button class="opt-btn" data-c="0">sigla</button><button class="opt-btn" data-c="0">abreviatura</button></div><div class="feedback"></div></div>
+<div class="card" id="q29" data-type="mc" data-ans="abreviatura" data-exp="Tem ponto no final."><div class="q-num">29</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Dra.&quot; (doutora) é:</div><div class="options"><button class="opt-btn" data-c="0">sigla</button><button class="opt-btn" data-c="0">abreviação</button><button class="opt-btn" data-c="1">abreviatura</button></div><div class="feedback"></div></div>
+<div class="card" id="q30" data-type="mc" data-ans="sigla" data-exp="PM é formada pelas letras iniciais."><div class="q-num">30</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;PM&quot; (Polícia Militar) é:</div><div class="options"><button class="opt-btn" data-c="0">abreviatura</button><button class="opt-btn" data-c="0">abreviação</button><button class="opt-btn" data-c="1">sigla</button></div><div class="feedback"></div></div>
+<div class="card" id="q31" data-type="mc" data-ans="televisão" data-exp="TV = televisão."><div class="q-num">31</div><span class="q-type">Redução de palavras</span><div class="q-text">TV é a redução de:</div><div class="options"><button class="opt-btn" data-c="1">televisão</button><button class="opt-btn" data-c="0">teatro e vídeo</button><button class="opt-btn" data-c="0">televisor pequeno</button></div><div class="feedback"></div></div>
+<div class="card" id="q32" data-type="mc" data-ans="motocicleta" data-exp="Moto = motocicleta."><div class="q-num">32</div><span class="q-type">Redução de palavras</span><div class="q-text">&quot;Moto&quot; é a forma reduzida de:</div><div class="options"><button class="opt-btn" data-c="1">motocicleta</button><button class="opt-btn" data-c="0">motor</button><button class="opt-btn" data-c="0">motorista</button></div><div class="feedback"></div></div>
+<div class="card" id="q33" data-type="mc" data-ans="somente uma parte da palavra" data-exp="A redução usa só um pedaço da palavra."><div class="q-num">33</div><span class="q-type">Redução de palavras</span><div class="q-text">Na redução de palavras, usa-se:</div><div class="options"><button class="opt-btn" data-c="0">só as letras iniciais de várias palavras</button><button class="opt-btn" data-c="1">somente uma parte da palavra</button><button class="opt-btn" data-c="0">a palavra inteira com ponto</button></div><div class="feedback"></div></div>
+<div class="card" id="q34" data-type="mc" data-ans="porque deixam a palavra mais curta e fácil de usar" data-exp="É mais prático."><div class="q-num">34</div><span class="q-type">Redução de palavras</span><div class="q-text">Por que usamos tanto as reduções na fala e na escrita do dia a dia?</div><div class="options"><button class="opt-btn" data-c="0">porque ninguém sabe a palavra inteira</button><button class="opt-btn" data-c="1">porque deixam a palavra mais curta e fácil de usar</button><button class="opt-btn" data-c="0">porque são obrigatórias por lei</button></div><div class="feedback"></div></div>
+<div class="card" id="q35" data-type="mc" data-ans="sujeito, verbo e complemento" data-exp="Quem faz + o que faz + onde/o quê."><div class="q-num">35</div><span class="q-type">Estrutura da frase</span><div class="q-text">A estrutura básica de uma frase tem:</div><div class="options"><button class="opt-btn" data-c="1">sujeito, verbo e complemento</button><button class="opt-btn" data-c="0">só um ponto final</button><button class="opt-btn" data-c="0">só adjetivos</button></div><div class="feedback"></div></div>
+<div class="card" id="q36" data-type="mc" data-ans="O gato" data-exp="Sujeito = de quem se fala."><div class="q-num">36</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;O gato dorme no sofá&quot;, qual é o sujeito?</div><div class="options"><button class="opt-btn" data-c="1">O gato</button><button class="opt-btn" data-c="0">no sofá</button><button class="opt-btn" data-c="0">dorme</button></div><div class="feedback"></div></div>
+<div class="card" id="q37" data-type="mc" data-ans="dorme" data-exp="Verbo = a ação."><div class="q-num">37</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;O gato dorme no sofá&quot;, qual é o verbo?</div><div class="options"><button class="opt-btn" data-c="0">no sofá</button><button class="opt-btn" data-c="1">dorme</button><button class="opt-btn" data-c="0">O gato</button></div><div class="feedback"></div></div>
+<div class="card" id="q38" data-type="mc" data-ans="no sofá" data-exp="Complemento = o restante da ideia (onde)."><div class="q-num">38</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;O gato dorme no sofá&quot;, qual é o complemento?</div><div class="options"><button class="opt-btn" data-c="0">dorme</button><button class="opt-btn" data-c="0">O gato</button><button class="opt-btn" data-c="1">no sofá</button></div><div class="feedback"></div></div>
+<div class="card" id="q39" data-type="mc" data-ans="o, a, os, as, um, uma, uns, umas" data-exp="Artigos acompanham os substantivos."><div class="q-num">39</div><span class="q-type">Estrutura da frase</span><div class="q-text">Os artigos são palavras como:</div><div class="options"><button class="opt-btn" data-c="1">o, a, os, as, um, uma, uns, umas</button><button class="opt-btn" data-c="0">correr, pular, comer</button><button class="opt-btn" data-c="0">rápido, bonito, alto</button></div><div class="feedback"></div></div>
+<div class="card" id="q40" data-type="mc" data-ans="ação" data-exp="Ex.: comprou, foram, gostam."><div class="q-num">40</div><span class="q-type">Estrutura da frase</span><div class="q-text">O verbo é a palavra que indica:</div><div class="options"><button class="opt-btn" data-c="0">característica</button><button class="opt-btn" data-c="0">lugar</button><button class="opt-btn" data-c="1">ação</button></div><div class="feedback"></div></div>
+<div class="card" id="q41" data-type="mc" data-ans="característica" data-exp="Ex.: vermelhas, pretas, pintadinha."><div class="q-num">41</div><span class="q-type">Estrutura da frase</span><div class="q-text">O adjetivo é a palavra que indica:</div><div class="options"><button class="opt-btn" data-c="0">o nome da pessoa</button><button class="opt-btn" data-c="1">característica</button><button class="opt-btn" data-c="0">ação</button></div><div class="feedback"></div></div>
+<div class="card" id="q42" data-type="mc" data-ans="a cantoria de viola, por causa do ritmo e da musicalidade" data-exp="Cordel tem ritmo, parece música."><div class="q-num">42</div><span class="q-type">Cordel</span><div class="q-text">Os cordéis têm muita relação com:</div><div class="options"><button class="opt-btn" data-c="1">a cantoria de viola, por causa do ritmo e da musicalidade</button><button class="opt-btn" data-c="0">o teatro de bonecos</button><button class="opt-btn" data-c="0">os jogos de futebol</button></div><div class="feedback"></div></div>
+<div class="card" id="q43" data-type="mc" data-ans="Nordeste" data-exp="É muito forte no Nordeste."><div class="q-num">43</div><span class="q-type">Cordel</span><div class="q-text">No Brasil, o cordel é mais comum na região:</div><div class="options"><button class="opt-btn" data-c="0">Centro-Oeste</button><button class="opt-btn" data-c="0">Sul</button><button class="opt-btn" data-c="1">Nordeste</button></div><div class="feedback"></div></div>
+<div class="card" id="q44" data-type="mc" data-ans="folhetos vendidos pendurados em cordas ou barbantes" data-exp="Os folhetos ficavam pendurados em cordéis."><div class="q-num">44</div><span class="q-type">Cordel</span><div class="q-text">O nome &quot;cordel&quot; vem de:</div><div class="options"><button class="opt-btn" data-c="0">uma cor muito usada nas capas</button><button class="opt-btn" data-c="0">um instrumento de cordas</button><button class="opt-btn" data-c="1">folhetos vendidos pendurados em cordas ou barbantes</button></div><div class="feedback"></div></div>
+<div class="card" id="q45" data-type="mc" data-ans="estrofes e versos, com rimas e linguagem popular" data-exp="Cordel é poesia popular."><div class="q-num">45</div><span class="q-type">Cordel</span><div class="q-text">Qual é uma característica do cordel?</div><div class="options"><button class="opt-btn" data-c="0">introdução, desenvolvimento e conclusão em parágrafos</button><button class="opt-btn" data-c="0">só números e tabelas</button><button class="opt-btn" data-c="1">estrofes e versos, com rimas e linguagem popular</button></div><div class="feedback"></div></div>
+<div class="card" id="q46" data-type="mc" data-ans="xilogravura" data-exp="Xilogravura = gravura feita em madeira."><div class="q-num">46</div><span class="q-type">Cordel</span><div class="q-text">As ilustrações das capas dos cordéis costumam ser feitas em:</div><div class="options"><button class="opt-btn" data-c="0">computação gráfica</button><button class="opt-btn" data-c="0">fotografia colorida</button><button class="opt-btn" data-c="1">xilogravura</button></div><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="resumo_conteudo.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="nivel2_intermediario.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="resumo_conteudo.html" class="btn-prev">← Resumo</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="nivel2_intermediario.html" class="btn-next">🔥 Nível 2 →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-var score = 0;
-var answered = {};
-var total = 36;
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
+var total = 46, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
   });
 });
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Incrível! Nota máxima! Você é uma superestrela! 🌟'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Arrasou! Quase perfeito, continue assim! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está quase dominando! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 36';
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+  });
+});
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
+});
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
+  document.getElementById('resultGrade').textContent = score + ' / ' + total;
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
   panel.scrollIntoView({ behavior: 'smooth' });
 });
@@ -619,25 +191,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Portugues_Nivel1_Basico.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Portugues_Nivel1_Basico.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>

@@ -1,624 +1,168 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>🔥 Nível 2 – Intermediário</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🔥 Nível 2 — Intermediário – Português</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1f1430; min-height: 100vh; padding-bottom: 40px; color:#f5f0ff; }
-.top-nav { background: rgba(0,0,0,0.4); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #f7971e; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #d97706; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #14203d; color: #eef2ff; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #0b1429; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #f9a8d4; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #ec4899; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #ec4899; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #f7971e; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.header { text-align: center; padding: 22px 16px 14px; background: rgba(255,255,255,0.06); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
-.level-tag { display: inline-block; background: linear-gradient(90deg,#f7971e,#ffd200); color: #333; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #ec4899; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: rgba(255,255,255,.06); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(255,210,0,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(255,210,0,0.75); cursor: pointer; }
-.score-bar { background: rgba(255,255,255,0.08); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-.score-num { font-size: 1.4rem; font-weight: 900; color: #ffd200; }
-.card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.15); }
-.q-num { background: linear-gradient(135deg,#f7971e,#ffd200); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #f5f0ff; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #ffd200; font-weight: 700; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #ec4899; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #ec4899; cursor: pointer; }
+.info-banner { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #ec4899; }
+.score-bar { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: rgba(238,250,241,.65); }
+.score-num { font-size: 1.4rem; font-weight: 900; color: #f9a8d4; }
+.card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #ec4899; }
+.card.passage { border-left: 5px solid #ec4899; }
+.q-num { background: linear-gradient(135deg,#ec4899,#f9a8d4); color: #2a1a4a; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #ec4899; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #f5f0ff; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
-.opt-btn.correct { background: rgba(74,222,128,0.2); border-color: #4ade80; color: #a7f3d0; }
-.opt-btn.wrong   { background: rgba(248,113,113,0.2); border-color: #f87171; color: #fca5a5; }
+.opt-btn { background: rgba(255,255,255,.07); border: 2px solid rgba(255,255,255,.16); border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #eef2ff; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
+.opt-btn.correct { background: rgba(74,222,128,.18); border-color: #4ade80; color: #bbf7d0; }
+.opt-btn.wrong { background: rgba(248,113,113,.18); border-color: #f87171; color: #fecaca; }
 .opt-btn.disabled { pointer-events: none; }
-.blank-input { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 11px 13px; color: white; font-size: 0.92rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
-.blank-input:focus { border-color: #ffd200; }
+.blank-input { background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.16); border-radius: 10px; padding: 11px 13px; color: #fff; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #ec4899; }
 .blank-input.correct-input { border-color: #4ade80; }
-.blank-input.wrong-input   { border-color: #f87171; }
-.check-btn { background: linear-gradient(135deg,#f7971e,#ffd200); border: none; border-radius: 10px; padding: 11px 20px; font-size: 0.9rem; font-family: inherit; font-weight: 800; color: #333; cursor: pointer; display: block; width: 100%; }
-.check-btn:disabled { opacity: 0.35; pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input.wrong-input { border-color: #f87171; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#ec4899,#f9a8d4); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #2a1a4a; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: rgba(74,222,128,0.15); border: 1px solid #4ade80; color: #a7f3d0; }
-.feedback.nok { background: rgba(248,113,113,0.15); border: 1px solid #f87171; color: #fca5a5; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #fcd34d; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#f7971e,#ffd200); color: #333; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.ok { background: rgba(74,222,128,.18); border: 1px solid #4ade80; color: #bbf7d0; }
+.feedback.nok { background: rgba(248,113,113,.18); border: 1px solid #f87171; color: #fecaca; }
+.feedback.model { background: rgba(255,255,255,.06); border: 1px solid #ec4899; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#ec4899,#f9a8d4); color: #2a1a4a; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#f7971e,#ffd200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #ec4899; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#d8b4fe,#6d28d9); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(255,210,0,0.1); border: 1.5px solid rgba(255,210,0,0.3); color: #ffd200 !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7) !important; }
-.btn-next { background: linear-gradient(135deg,#be185d,#7c3aed); color: white !important; }
-.btn-home-only { background: rgba(124,58,237,0.12); border: 1.5px solid rgba(124,58,237,0.3); color: #d8b4fe !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
-.credit strong { color: #d8b4fe; }
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#ec4899,#f9a8d4); color: #2a1a4a; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #ec4899; color: #ec4899 !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #ec4899; color: #ec4899; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#ec4899,#f9a8d4); color: #2a1a4a; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
 body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
-body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-body.pdf-export .card { border: 1px solid #ccc !important; }
-body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
-body.pdf-export .check-btn { display: none !important; }
-body.pdf-export .feedback { display: none !important; }
-body.pdf-export .header { background: white !important; border-bottom: 2px solid #d97706 !important; }
-body.pdf-export .header h1, body.pdf-export .header p, body.pdf-export .level-tag { color: #111 !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
+body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #7c3aed !important; }
 body.pdf-export .credit { color: #888 !important; }
-</style>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">🔥 Nível 2 — Intermediário</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">📖 Avaliação de Português — Nível 2</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 2</div>
-  <h1>🔥 Intermediário</h1>
-  <p>Interpretação, R, gêneros textuais, verbos, verbete e mais — 36 questões</p>
-</div>
-
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">🔥 Nível 2 — Intermediário</span></div>
+<div class="exam-header"><div class="eh-title">📖 Avaliação de Português — Nível 2 — Intermediário</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 2 — Intermediário</div><h1>🔥 Nível 2 — Intermediário</h1><p>Escolher e escrever — 28 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 36</span>
-</div>
 
-<!-- Q1 blank -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Complete: quando o R tem som forte e fica <strong>entre duas vogais</strong>, escrevemos com <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q1" placeholder="Digite a resposta...">
-  <button class="check-btn" id="btn-q1">Verificar resposta</button>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">A palavra "honra" se escreve com um R só porque:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! Quando o R vem depois de consoante, usa-se sempre um R só, mesmo com som forte." data-tip="">O R vem depois de uma consoante (N), e nesses casos usa-se sempre um R só</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Isso não explica a regra corretamente." data-tip="💡 Observe a letra que vem antes do R em 'honra'.">O R está no início da palavra</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Existe uma explicação clara para essa regra." data-tip="💡 Observe a letra que vem antes do R em 'honra'.">É uma exceção sem explicação</button>
-  </div>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Qual destas palavras tem o R com som fraco (um R só, entre vogais)?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q3" data-correct="true" data-msg="Isso mesmo! Hora tem o R entre vogais com som fraco." data-tip="">hora</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Carro tem RR, som forte." data-tip="💡 Pense em como cada palavra soa ao ser falada.">carro</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Corrida tem RR, som forte." data-tip="💡 Pense em como cada palavra soa ao ser falada.">corrida</button>
-  </div>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 blank -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">A palavra "INCRÍVEL" tem a sílaba tônica na penúltima sílaba (in-CRÍ-vel). Ela é uma palavra <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q4" placeholder="Digite a classificação...">
-  <button class="check-btn" id="btn-q4">Verificar resposta</button>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Qual destas palavras é oxítona?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q5" data-correct="true" data-msg="Isso mesmo! Feliz (fe-LIZ) tem a tônica na última sílaba." data-tip="">feliz</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! Época é proparoxítona (É-po-ca)." data-tip="💡 Pense em qual dessas termina com o som mais forte.">época</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! Vida é paroxítona (VI-da)." data-tip="💡 Pense em qual dessas termina com o som mais forte.">vida</button>
-  </div>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">No "Diário de Maura", além de contar fatos da viagem, o texto também tem qual outra finalidade?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q6" data-correct="true" data-msg="Isso mesmo! O texto também provoca humor no leitor." data-tip="">Provocar humor no leitor</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! O diário não tem essa finalidade comercial." data-tip="💡 Pense no tom bem-humorado usado pela autora ao descrever a viagem.">Apenas vender livros</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! Isso não é mencionado no texto." data-tip="💡 Pense no tom bem-humorado usado pela autora ao descrever a viagem.">Divulgar receitas culinárias</button>
-  </div>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 blank -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">Complete: o projeto "Naturário" foi criado pela educadora Ana Carol <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q7" placeholder="Digite o sobrenome...">
-  <button class="check-btn" id="btn-q7">Verificar resposta</button>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">A hashtag usada no projeto Naturário é:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q8" data-correct="true" data-msg="Isso mesmo! A hashtag é #TodoDiaLáForaSCN." data-tip="">#TodoDiaLáForaSCN</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Essa hashtag não é usada no texto." data-tip="💡 A hashtag une as palavras 'todo dia lá fora'.">#AmoNatureza</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Essa hashtag não é usada no texto." data-tip="💡 A hashtag une as palavras 'todo dia lá fora'.">#DiárioDaMaura</button>
-  </div>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Interpretação textual</span>
-  <div class="q-text">Mafalda, personagem argentina, é conhecida por ser uma menina:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! Mafalda é questionadora, inquieta e cheia de reflexões." data-tip="">Questionadora e inquieta</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Mafalda é justamente o contrário — questionadora e falante." data-tip="💡 Pense no jeito de Mafalda comentar o mundo à sua volta.">Tímida e quieta</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Mafalda é bastante curiosa sobre o mundo." data-tip="💡 Pense no jeito de Mafalda comentar o mundo à sua volta.">Nada curiosa</button>
-  </div>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Qual é a frase corretamente organizada a partir das palavras: "no parque" — "As crianças" — "brincaram"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Sujeito + verbo + complemento." data-tip="">As crianças brincaram no parque.</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Essa ordem não segue a estrutura natural da frase." data-tip="💡 Pense em quem primeiro pratica a ação (sujeito).">No parque brincaram as crianças no.</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Essa ordem embaralha as palavras." data-tip="💡 Pense em quem primeiro pratica a ação (sujeito).">Brincaram no as crianças parque.</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">Na frase "As crianças brincaram no parque", o que vem ANTES do verbo?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q11" data-correct="true" data-msg="Isso mesmo! 'As crianças' é quem pratica a ação (sujeito)." data-tip="">O sujeito — quem pratica a ação</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! O complemento vem depois do verbo." data-tip="💡 'As crianças' vem antes de 'brincaram'.">O complemento da frase</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! Não há pontuação de exclamação nessa frase." data-tip="💡 'As crianças' vem antes de 'brincaram'.">Um sinal de pontuação</button>
-  </div>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Organização de frases</span>
-  <div class="q-text">O que geralmente vem DEPOIS do verbo em uma frase?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! O complemento (o quê, como, onde, quando) geralmente vem depois do verbo." data-tip="">O complemento (o quê, como, onde, quando)</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! O sujeito geralmente vem antes do verbo." data-tip="💡 Pense na frase 'As crianças brincaram no parque'.">O sujeito da frase</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Isso não tem relação com a estrutura da frase." data-tip="💡 Pense na frase 'As crianças brincaram no parque'.">O título do texto</button>
-  </div>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 blank -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Uso do R ou RR</span>
-  <div class="q-text">Complete: quando o R está no <strong>início</strong> da palavra, o som é sempre <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q13" placeholder="Digite a resposta...">
-  <button class="check-btn" id="btn-q13">Verificar resposta</button>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Sílaba tônica</span>
-  <div class="q-text">Qual destas é uma palavra proparoxítona?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q14" data-correct="true" data-msg="Isso mesmo! Plácido (PLÁ-ci-do) tem a tônica na antepenúltima sílaba." data-tip="">plácido</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Fácil é paroxítona (FÁ-cil)." data-tip="💡 Conte as sílabas de 'plácido': PLÁ-ci-do.">fácil</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Jiló é oxítona (ji-LÓ)." data-tip="💡 Conte as sílabas de 'plácido': PLÁ-ci-do.">jiló</button>
-  </div>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
-<!-- Q15 blank -->
-<div class="card" id="q15">
-  <div class="q-num">15</div><span class="q-type">Verbos</span>
-  <div class="q-text">Complete com o verbo no passado: "Ontem, os meninos <strong>______</strong> futebol no parque." (jogar)</div>
-  <input type="text" class="blank-input" id="inp-q15" placeholder="Digite o verbo...">
-  <button class="check-btn" id="btn-q15">Verificar resposta</button>
-  <div class="feedback" id="fb-q15"></div>
-</div>
-
-<!-- Q16 blank -->
-<div class="card" id="q16">
-  <div class="q-num">16</div><span class="q-type">Verbos</span>
-  <div class="q-text">Complete com o verbo no futuro: "Amanhã, as meninas <strong>______</strong> ao cinema." (assistir)</div>
-  <input type="text" class="blank-input" id="inp-q16" placeholder="Digite o verbo...">
-  <button class="check-btn" id="btn-q16">Verificar resposta</button>
-  <div class="feedback" id="fb-q16"></div>
-</div>
-
-<!-- Q17 -->
-<div class="card" id="q17">
-  <div class="q-num">17</div><span class="q-type">Verbos</span>
-  <div class="q-text">A terminação -ÃO no verbo indica uma ação que:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q17" data-correct="true" data-msg="Isso mesmo! -ÃO indica futuro, ação que ainda vai acontecer." data-tip="">Ainda vai acontecer (futuro)</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! -AM é que indica o passado." data-tip="💡 Pense em 'eles voltarÃO' — quando isso vai acontecer?">Já aconteceu (passado)</button>
-    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! O presente não usa essa terminação." data-tip="💡 Pense em 'eles voltarÃO' — quando isso vai acontecer?">Está acontecendo agora (presente)</button>
-  </div>
-  <div class="feedback" id="fb-q17"></div>
-</div>
-
-<!-- Q18 -->
-<div class="card" id="q18">
-  <div class="q-num">18</div><span class="q-type">O Verbete</span>
-  <div class="q-text">Um verbete, como os encontrados no dicionário, serve para:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Verbetes explicam o significado das palavras." data-tip="">Explicar o significado de uma palavra</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Isso não é a função de um verbete." data-tip="💡 Pense em quando você procura uma palavra no dicionário.">Contar uma história em capítulos</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Isso não é a função de um verbete." data-tip="💡 Pense em quando você procura uma palavra no dicionário.">Vender um produto</button>
-  </div>
-  <div class="feedback" id="fb-q18"></div>
-</div>
-
-<!-- Q19 -->
-<div class="card" id="q19">
-  <div class="q-num">19</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Qual é a principal característica de um diário?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q19" data-correct="true" data-msg="Isso mesmo! O diário relata vivências e sentimentos pessoais, com data." data-tip="">Relata vivências e sentimentos pessoais, geralmente com data</button>
-    <button class="opt-btn" data-q="q19" data-correct="false" data-msg="Errado! Isso descreve melhor uma tirinha." data-tip="💡 Pense no diário da Maura.">Tem poucos quadros e personagens com balões</button>
-    <button class="opt-btn" data-q="q19" data-correct="false" data-msg="Errado! Isso descreve melhor um verbete." data-tip="💡 Pense no diário da Maura.">Explica o significado de uma palavra</button>
-  </div>
-  <div class="feedback" id="fb-q19"></div>
-</div>
-
-<!-- Q20 -->
-<div class="card" id="q20">
-  <div class="q-num">20</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Uma tirinha costuma ter:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q20" data-correct="true" data-msg="Isso mesmo! Tirinhas têm poucos quadros, personagens e balões de fala." data-tip="">Poucos quadros, personagens e balões de fala</button>
-    <button class="opt-btn" data-q="q20" data-correct="false" data-msg="Errado! Isso descreve melhor um diário." data-tip="💡 Pense nas tirinhas da Mafalda.">Data e relato de sentimentos pessoais</button>
-    <button class="opt-btn" data-q="q20" data-correct="false" data-msg="Errado! Isso descreve melhor um verbete." data-tip="💡 Pense nas tirinhas da Mafalda.">Classe gramatical e definição de palavras</button>
-  </div>
-  <div class="feedback" id="fb-q20"></div>
-</div>
-
-<!-- Q21 blank -->
-<div class="card" id="q21">
-  <div class="q-num">21</div><span class="q-type">Gêneros textuais</span>
-  <div class="q-text">Complete: o texto que explica o significado das palavras é chamado de <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q21" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q21">Verificar resposta</button>
-  <div class="feedback" id="fb-q21"></div>
-</div>
-
-<!-- Q22 -->
-<div class="card" id="q22">
-  <div class="q-num">22</div><span class="q-type">Polissemia</span>
-  <div class="q-text">A palavra "bote" pode significar "embarcação pequena" ou ser uma forma do verbo "botar". Isso é exemplo de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q22" data-correct="true" data-msg="Isso mesmo! Isso é polissemia." data-tip="">Polissemia</button>
-    <button class="opt-btn" data-q="q22" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense em uma palavra com mais de um significado.">Sinônimo</button>
-    <button class="opt-btn" data-q="q22" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense em uma palavra com mais de um significado.">Ditongo</button>
-  </div>
-  <div class="feedback" id="fb-q22"></div>
-</div>
-
-<!-- Q23 blank -->
-<div class="card" id="q23">
-  <div class="q-num">23</div><span class="q-type">Polissemia</span>
-  <div class="q-text">Complete: quando uma palavra tem vários significados diferentes, dizemos que ela é <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q23" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q23">Verificar resposta</button>
-  <div class="feedback" id="fb-q23"></div>
-</div>
-
-<!-- Q24 -->
-<div class="card" id="q24">
-  <div class="q-num">24</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Qual destas palavras tem o som de S representado por "SS"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q24" data-correct="true" data-msg="Isso mesmo! Em 'pessoa', o som de S é representado por SS." data-tip="">Pessoa</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! Em 'cabeça', o som de S é representado por Ç." data-tip="💡 Pense nas duas letras iguais juntas.">Cabeça</button>
-    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! Em 'excesso', a primeira parte usa XC." data-tip="💡 Pense nas duas letras iguais juntas.">Excesso</button>
-  </div>
-  <div class="feedback" id="fb-q24"></div>
-</div>
-
-<!-- Q25 -->
-<div class="card" id="q25">
-  <div class="q-num">25</div><span class="q-type">Som de /S/</span>
-  <div class="q-text">Qual destas palavras tem o som de S representado por "XC"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q25" data-correct="true" data-msg="Isso mesmo! Em 'excesso', o som de S é representado por XC." data-tip="">Excesso</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Em 'pessoa', o som de S é representado por SS." data-tip="💡 Pense na combinação de letras usada antes do 'esso'.">Pessoa</button>
-    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Em 'sapato', o som de S é representado por S." data-tip="💡 Pense na combinação de letras usada antes do 'esso'.">Sapato</button>
-  </div>
-  <div class="feedback" id="fb-q25"></div>
-</div>
-
-<!-- Q26 blank -->
-<div class="card" id="q26">
-  <div class="q-num">26</div><span class="q-type">Sufixos -ADA/-ADO</span>
-  <div class="q-text">Complete: ao acrescentar o sufixo -ADO à palavra "tempero", formamos a palavra <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q26" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q26">Verificar resposta</button>
-  <div class="feedback" id="fb-q26"></div>
-</div>
-
-<!-- Q27 -->
-<div class="card" id="q27">
-  <div class="q-num">27</div><span class="q-type">Ditongos</span>
-  <div class="q-text">Qual destas palavras tem um ditongo?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q27" data-correct="true" data-msg="Isso mesmo! 'Noite' tem o ditongo 'oi' (noi-te)." data-tip="">Noite</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! 'Parque' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe as palavras em sílabas e veja onde duas vogais ficam juntas.">Parque</button>
-    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! 'Floresta' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe as palavras em sílabas e veja onde duas vogais ficam juntas.">Floresta</button>
-  </div>
-  <div class="feedback" id="fb-q27"></div>
-</div>
-
-<!-- Q28 -->
-<div class="card" id="q28">
-  <div class="q-num">28</div><span class="q-type">Ditongos</span>
-  <div class="q-text">Qual destas palavras NÃO tem um ditongo?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q28" data-correct="true" data-msg="Isso mesmo! 'Sol' não tem duas vogais juntas numa mesma sílaba." data-tip="">Sol</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! 'Céu' tem o ditongo 'éu'." data-tip="💡 Pense em qual palavra tem só uma vogal na sílaba.">Céu</button>
-    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! 'Animais' tem o ditongo 'ai' (ani-mais)." data-tip="💡 Pense em qual palavra tem só uma vogal na sílaba.">Animais</button>
-  </div>
-  <div class="feedback" id="fb-q28"></div>
-</div>
-
-<!-- Q29 -->
-<div class="card" id="q29">
-  <div class="q-num">29</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">A palavra "verde" se encaixa em qual categoria de R?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q29" data-correct="true" data-msg="Isso mesmo! Em 'verde', o R fica entre a vogal E e a consoante D." data-tip="">R entre consoante e vogal (ou vogal e consoante)</button>
-    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! Isso seria se o R estivesse no começo da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'verde'.">R inicial</button>
-    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! Isso seria se a palavra tivesse duas letras R." data-tip="💡 Observe onde o R está dentro da palavra 'verde'.">RR</button>
-  </div>
-  <div class="feedback" id="fb-q29"></div>
-</div>
-
-<!-- Q30 blank -->
-<div class="card" id="q30">
-  <div class="q-num">30</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">Complete com R ou RR: "O gato saiu co<strong>______</strong>endo atrás do rato pelo quintal." (correr)</div>
-  <input type="text" class="blank-input" id="inp-q30" placeholder="Digite a letra ou letras...">
-  <button class="check-btn" id="btn-q30">Verificar resposta</button>
-  <div class="feedback" id="fb-q30"></div>
-</div>
-
-<!-- Q31 -->
-<div class="card" id="q31">
-  <div class="q-num">31</div><span class="q-type">Uso do R (5 categorias)</span>
-  <div class="q-text">A palavra "tronco" NÃO se encaixa na categoria "R entre consoante e vogal" porque:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! TR é um encontro consonantal, então fica de fora dessa categoria." data-tip="">Forma um encontro consonantal (TR)</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! O R não está no início da palavra 'tronco'." data-tip="💡 Pense nas duas letras juntas 'TR' no início da sílaba.">O R está no início da palavra</button>
-    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! A palavra não tem duas letras R." data-tip="💡 Pense nas duas letras juntas 'TR' no início da sílaba.">A palavra tem duas letras R</button>
-  </div>
-  <div class="feedback" id="fb-q31"></div>
-</div>
-
-<!-- Q32 -->
-<div class="card" id="q32">
-  <div class="q-num">32</div><span class="q-type">Interpretação de assunto</span>
-  <div class="q-text">Um texto que fala sobre pessoas jogando lixo nas ruas, um pedacinho aqui e outro ali, tem como assunto principal:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q32" data-correct="true" data-msg="Isso mesmo! O assunto é a atitude das pessoas em relação ao lixo." data-tip="">A atitude das pessoas em jogar lixo nas ruas</button>
-    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! Não é sobre reciclagem, e sim sobre a atitude de jogar lixo." data-tip="💡 Pense no comportamento das pessoas descrito no texto.">A coleta seletiva de lixo reciclável</button>
-    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! Não é sobre isso." data-tip="💡 Pense no comportamento das pessoas descrito no texto.">A importância de plantar árvores</button>
-  </div>
-  <div class="feedback" id="fb-q32"></div>
-</div>
-
-<!-- Q33 blank -->
-<div class="card" id="q33">
-  <div class="q-num">33</div><span class="q-type">Verbo AM/ÃO</span>
-  <div class="q-text">Complete no passado: "Ontem, João e Teresa <strong>______</strong> bola no quintal." (jogar)</div>
-  <input type="text" class="blank-input" id="inp-q33" placeholder="Digite o verbo...">
-  <button class="check-btn" id="btn-q33">Verificar resposta</button>
-  <div class="feedback" id="fb-q33"></div>
-</div>
-
-<!-- Q34 -->
-<div class="card" id="q34">
-  <div class="q-num">34</div><span class="q-type">Verbo AM/ÃO</span>
-  <div class="q-text">Complete no futuro: "Amanhã, os meninos ___ futebol na quadra." (jogar)</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q34" data-correct="true" data-msg="Isso mesmo! 'Amanhã' pede o futuro: jogarão." data-tip="">Jogarão</button>
-    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Essa terminação é do passado." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">Jogaram</button>
-    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Essa não é a forma correta do verbo." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">Jogava</button>
-  </div>
-  <div class="feedback" id="fb-q34"></div>
-</div>
-
-<!-- Q35 -->
-<div class="card" id="q35">
-  <div class="q-num">35</div><span class="q-type">Verbete</span>
-  <div class="q-text">Qual verbete está correto para a palavra "sussurrar"?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q35" data-correct="true" data-msg="Isso mesmo! Sussurrar é falar bem baixinho." data-tip="">Falar bem baixinho, quase sem som.</button>
-    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Isso descreve a palavra 'gritar'." data-tip="💡 Pense em como alguém fala um segredo.">Falar muito alto, gritando.</button>
-    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Isso descreve a palavra 'correr'." data-tip="💡 Pense em como alguém fala um segredo.">Correr muito rápido.</button>
-  </div>
-  <div class="feedback" id="fb-q35"></div>
-</div>
-
-<!-- Q36 -->
-<div class="card" id="q36">
-  <div class="q-num">36</div><span class="q-type">Verbete</span>
-  <div class="q-text">Ao criar um verbete, é importante incluir:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q36" data-correct="true" data-msg="Isso mesmo! Um bom verbete tem classe gramatical e significado." data-tip="">A classe gramatical e o significado da palavra</button>
-    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso é mais parte de uma tirinha." data-tip="💡 Pense no que o dicionário sempre mostra sobre uma palavra.">Personagens e balões de fala</button>
-    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso é mais parte de um diário." data-tip="💡 Pense no que o dicionário sempre mostra sobre uma palavra.">A data e os sentimentos do autor</button>
-  </div>
-  <div class="feedback" id="fb-q36"></div>
-</div>
-
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 28</span></div>
+<div class="card" id="q1" data-type="bl" data-acc="jogam" data-ans="jogam" data-exp="Verbo = ação."><div class="q-num">1</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;Os meninos jogam bola&quot;, a palavra que indica a ação (o verbo) é <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="bl" data-acc="pintadinha" data-ans="pintadinha" data-exp="Adjetivo = característica."><div class="q-num">2</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;Dona Amélia comprou uma galinha pintadinha&quot;, o adjetivo é <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="bl" data-acc="uma" data-ans="uma" data-exp="Artigo: o, a, um, uma..."><div class="q-num">3</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;Dona Amélia comprou uma galinha pintadinha&quot;, o artigo é <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="bl" data-acc="saúde|saude" data-ans="saúde" data-exp="SUS = Sistema Único de Saúde."><div class="q-num">4</div><span class="q-type">Siglas e abreviações</span><div class="q-text">A sigla SUS significa Sistema Único de <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="bl" data-acc="abreviatura" data-ans="abreviatura" data-exp="Abreviatura tem ponto no final."><div class="q-num">5</div><span class="q-type">Siglas e abreviações</span><div class="q-text">A forma reduzida que termina sempre com ponto (como Dr.) se chama <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q6" data-type="bl" data-acc="abreviação|abreviacao" data-ans="abreviação" data-exp="Abreviação não tem ponto."><div class="q-num">6</div><span class="q-type">Siglas e abreviações</span><div class="q-text">A forma reduzida que NÃO termina com ponto (como &quot;refri&quot;) se chama <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="bl" data-acc="televisão|televisao" data-ans="televisão" data-exp="TV = televisão."><div class="q-num">7</div><span class="q-type">Redução de palavras</span><div class="q-text">TV é a redução da palavra <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q8" data-type="bl" data-acc="nordeste" data-ans="nordeste" data-exp="Nordeste."><div class="q-num">8</div><span class="q-type">Cordel</span><div class="q-text">O cordel é mais comum na região <strong>______</strong> do Brasil.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q9" data-type="bl" data-acc="xilogravuras|xilogravura" data-ans="xilogravuras" data-exp="Xilogravura."><div class="q-num">9</div><span class="q-type">Cordel</span><div class="q-text">As ilustrações em madeira que enfeitam as capas dos cordéis se chamam <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="bl" data-acc="figurado" data-ans="figurado" data-exp="Sentido figurado."><div class="q-num">10</div><span class="q-type">Sentido figurado</span><div class="q-text">Usar uma palavra de um jeito criativo, diferente do sentido comum, é usar o sentido <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="figurado (é exagero, ninguém está morrendo)" data-exp="É uma expressão exagerada."><div class="q-num">11</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Estou morrendo de fome!&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="1">figurado (é exagero, ninguém está morrendo)</button><button class="opt-btn" data-c="0">comum (real)</button><button class="opt-btn" data-c="0">nenhum</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="comum (real)" data-exp="É uma informação verdadeira."><div class="q-num">12</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Meu irmão tem 8 anos.&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">imaginário</button><button class="opt-btn" data-c="0">figurado</button><button class="opt-btn" data-c="1">comum (real)</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="o problema é difícil de resolver" data-exp="Abacaxi, no figurado, é algo difícil."><div class="q-num">13</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Esse problema é um abacaxi!&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="0">o problema é uma fruta</button><button class="opt-btn" data-c="1">o problema é difícil de resolver</button><button class="opt-btn" data-c="0">o problema é doce</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="comum (real)" data-exp="É a fruta de verdade."><div class="q-num">14</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Comi um abacaxi docinho.&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">imaginário</button><button class="opt-btn" data-c="1">comum (real)</button><button class="opt-btn" data-c="0">figurado</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="meu avô é muito bondoso" data-exp="Coração de ouro = bondade."><div class="q-num">15</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;Meu avô tem um coração de ouro.&quot; quer dizer:</div><div class="options"><button class="opt-btn" data-c="1">meu avô é muito bondoso</button><button class="opt-btn" data-c="0">meu avô tem um órgão de metal</button><button class="opt-btn" data-c="0">meu avô é muito rico</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="comum (real)" data-exp="É o que realmente aconteceu."><div class="q-num">16</div><span class="q-type">Sentido figurado</span><div class="q-text">&quot;O sapo pulou na lagoa.&quot; está em sentido:</div><div class="options"><button class="opt-btn" data-c="0">figurado</button><button class="opt-btn" data-c="1">comum (real)</button><button class="opt-btn" data-c="0">inventado</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="abreviação" data-exp="Não tem ponto e foi cortada."><div class="q-num">17</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Pq&quot; (porque) é uma:</div><div class="options"><button class="opt-btn" data-c="0">abreviatura</button><button class="opt-btn" data-c="0">sigla</button><button class="opt-btn" data-c="1">abreviação</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="abreviatura" data-exp="Termina com ponto."><div class="q-num">18</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;Obs.&quot; (observação) é uma:</div><div class="options"><button class="opt-btn" data-c="0">sigla</button><button class="opt-btn" data-c="0">abreviação</button><button class="opt-btn" data-c="1">abreviatura</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="sigla" data-exp="Letras iniciais de Cadastro Nacional da Pessoa Jurídica."><div class="q-num">19</div><span class="q-type">Siglas e abreviações</span><div class="q-text">&quot;CNPJ&quot; é uma:</div><div class="options"><button class="opt-btn" data-c="1">sigla</button><button class="opt-btn" data-c="0">abreviatura</button><button class="opt-btn" data-c="0">abreviação</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="refrigerante" data-exp="Refri = refrigerante."><div class="q-num">20</div><span class="q-type">Redução de palavras</span><div class="q-text">&quot;Refri&quot; é a redução de:</div><div class="options"><button class="opt-btn" data-c="0">refrigerador</button><button class="opt-btn" data-c="1">refrigerante</button><button class="opt-btn" data-c="0">refrão</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="vermelhas e pretas" data-exp="Adjetivos indicam características: cor vermelha e cor preta."><div class="q-num">21</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;As joaninhas vermelhas têm pintinhas pretas&quot;, quais são os adjetivos?</div><div class="options"><button class="opt-btn" data-c="0">joaninhas e pintinhas</button><button class="opt-btn" data-c="1">vermelhas e pretas</button><button class="opt-btn" data-c="0">As e têm</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="têm" data-exp="Têm é a ação/estado do sujeito."><div class="q-num">22</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;As joaninhas vermelhas têm pintinhas pretas&quot;, o verbo é:</div><div class="options"><button class="opt-btn" data-c="0">vermelhas</button><button class="opt-btn" data-c="1">têm</button><button class="opt-btn" data-c="0">pintinhas</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="José, Maria e Belém" data-exp="Substantivos dão nome a pessoas e lugares."><div class="q-num">23</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;José e Maria foram para Belém&quot;, os substantivos são:</div><div class="options"><button class="opt-btn" data-c="0">foram e para</button><button class="opt-btn" data-c="1">José, Maria e Belém</button><button class="opt-btn" data-c="0">José e foram</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="para Belém" data-exp="O complemento diz onde foram."><div class="q-num">24</div><span class="q-type">Estrutura da frase</span><div class="q-text">Em &quot;José e Maria foram para Belém&quot;, o complemento é:</div><div class="options"><button class="opt-btn" data-c="0">José e Maria</button><button class="opt-btn" data-c="0">foram</button><button class="opt-btn" data-c="1">para Belém</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="doe" data-exp="Palavra de comando pede uma ação."><div class="q-num">25</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Qual destas é uma palavra de comando?</div><div class="options"><button class="opt-btn" data-c="0">ontem</button><button class="opt-btn" data-c="1">doe</button><button class="opt-btn" data-c="0">bonito</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="convencer as pessoas a agir por uma causa" data-exp="Campanha social mobiliza as pessoas."><div class="q-num">26</div><span class="q-type">Anúncio de campanha</span><div class="q-text">Uma campanha social (como a do agasalho ou da dengue) quer principalmente:</div><div class="options"><button class="opt-btn" data-c="0">vender um produto caro</button><button class="opt-btn" data-c="0">contar uma piada</button><button class="opt-btn" data-c="1">convencer as pessoas a agir por uma causa</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="parágrafos longos" data-exp="Cordel é feito de estrofes e versos, não de parágrafos."><div class="q-num">27</div><span class="q-type">Cordel</span><div class="q-text">Qual destas NÃO é característica do cordel?</div><div class="options"><button class="opt-btn" data-c="0">musicalidade</button><button class="opt-btn" data-c="1">parágrafos longos</button><button class="opt-btn" data-c="0">xilogravuras</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="versos" data-exp="Versos agrupados formam estrofes."><div class="q-num">28</div><span class="q-type">Cordel</span><div class="q-text">No cordel, as linhas do texto se chamam:</div><div class="options"><button class="opt-btn" data-c="0">capítulos</button><button class="opt-btn" data-c="1">versos</button><button class="opt-btn" data-c="0">parágrafos</button></div><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="nivel1_basico.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="nivel3_avancado.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="nivel1_basico.html" class="btn-prev">← Nível 1</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="nivel3_avancado.html" class="btn-next">💎 Nível 3 →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-var score = 0;
-var answered = {};
-var total = 36;
-
-var blankCfg = {
-  'q1':  { accepts: ['rr'], ok: 'Isso mesmo! R forte entre vogais se escreve com RR.', nok: 'A resposta correta é: RR.', tip: '💡 Pense na palavra "carro"!' },
-  'q4':  { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
-  'q7':  { accepts: ['thome','thomé'], ok: 'Isso mesmo! Ana Carol Thomé criou o projeto Naturário.', nok: 'A resposta correta é: Thomé.', tip: '💡 É o mesmo sobrenome da educadora citada no texto.' },
-  'q13': { accepts: ['forte'], ok: 'Isso mesmo! No início da palavra, o R sempre tem som forte.', nok: 'A resposta correta é: forte.', tip: '💡 Pense na palavra "rato" — como ela soa?' },
-  'q15': { accepts: ['jogaram'], ok: 'Isso mesmo! Jogaram está no passado (-AM).', nok: 'A resposta correta é: jogaram.', tip: '💡 "Ontem" indica que já aconteceu.' },
-  'q16': { accepts: ['assistirao','assistirão'], ok: 'Isso mesmo! Assistirão está no futuro (-ÃO).', nok: 'A resposta correta é: assistirão.', tip: '💡 "Amanhã" indica que ainda vai acontecer.' },
-  'q21': { accepts: ['verbete'], ok: 'Isso mesmo! Verbete explica o significado de uma palavra.', nok: 'A resposta correta é: verbete.', tip: '💡 Pense no texto do dicionário.' },
-  'q23': { accepts: ['polissemica','polissêmica'], ok: 'Isso mesmo! Uma palavra com vários significados é polissêmica.', nok: 'A resposta correta é: polissêmica.', tip: '💡 Pense em "vela", que tem mais de um significado.' },
-  'q26': { accepts: ['temperado'], ok: 'Isso mesmo! Tempero + ado = temperado.', nok: 'A resposta correta é: temperado.', tip: '💡 Pense em "comida temperada".' },
-  'q30': { accepts: ['rr'], ok: 'Isso mesmo! "Correr" tem som forte entre vogais, por isso se escreve com RR.', nok: 'A resposta correta é: RR.', tip: '💡 Pense no som forte de "correr" entre as vogais O e E.' },
-  'q33': { accepts: ['jogaram'], ok: 'Isso mesmo! Jogaram está no passado (-AM).', nok: 'A resposta correta é: jogaram.', tip: '💡 "Ontem" indica que já aconteceu.' },
-};
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
+var total = 28, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
   });
 });
-
-Object.keys(blankCfg).forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  if (!btn) return;
-  btn.addEventListener('click', function() {
-    if (answered[qid]) return;
-    answered[qid] = true;
-    btn.disabled = true;
-    var inp = document.getElementById('inp-' + qid);
-    var val = inp.value.trim().toLowerCase().replace(/[.!?]$/, '');
-    var cfg = blankCfg[qid];
-    if (cfg.accepts.indexOf(val) !== -1) {
-      inp.classList.add('correct-input'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, cfg.ok, '', '');
-    } else {
-      inp.classList.add('wrong-input');
-      showFeedback(qid, false, '', cfg.nok, cfg.tip);
-    }
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
   });
 });
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Arrasou! Nota máxima! Você dominou o intermediário! 💥'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Incrível! Quase perfeito, continue assim! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Tá dominando o conteúdo! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 36';
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
+});
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
+  document.getElementById('resultGrade').textContent = score + ' / ' + total;
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
   panel.scrollIntoView({ behavior: 'smooth' });
 });
@@ -629,25 +173,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Portugues_Nivel2_Intermediario.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Portugues_Nivel2_Intermediario.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>

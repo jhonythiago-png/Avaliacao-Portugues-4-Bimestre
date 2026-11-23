@@ -1,573 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>📚 Resumo – Português</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 Resumo – Português</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; color: #241638; padding-bottom: 80px; }
-
-.top-nav { background: #241638; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.top-nav a { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
-
-.hero { background: linear-gradient(145deg,#6d28d9,#a855f7,#ec4899); padding: 32px 20px 24px; text-align: center; position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.1), transparent 60%); pointer-events: none; }
-.hero-emoji { font-size: 3rem; display: block; margin-bottom: 10px; position: relative; }
-.hero h1 { font-size: 1.55rem; font-weight: 900; color: white; line-height: 1.2; position: relative; }
-.hero h2 { font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400; margin-top: 6px; position: relative; }
-.hero-pill { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; position: relative; }
-
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f2ff; color: #2a1a4a; padding-bottom: 80px; }
+.top-nav { background: #3b1d6e; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #d8b4fe; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav span { color: rgba(255,255,255,.55); font-size: .78rem; }
+.hero { background: linear-gradient(145deg,#5b21b6,#7c3aed,#ec4899); padding: 30px 20px 22px; text-align: center; }
+.hero-emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+.hero h1 { font-size: 1.5rem; font-weight: 900; color: #fff; }
+.hero h2 { font-size: .95rem; color: rgba(255,255,255,.85); font-weight: 400; margin-top: 6px; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,.2); color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; }
 .print-btn-wrap { text-align: right; padding: 10px 16px 0; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(124,58,237,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(124,58,237,0.7); cursor: pointer; }
-.print-btn:hover { border-color: #7c3aed; color: #7c3aed; }
-
-.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 8px; background: #f6f0fb; border-bottom: 1px solid #ecdcfa; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
-.nav-dot { background: none; border: 2px solid #d8b4fe; color: #7c3aed; font-size: 0.68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
-.nav-dot.active, .nav-dot:active { background: #7c3aed; color: white; border-color: #7c3aed; }
-
-.section { padding: 20px 16px 8px; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #7c3aed; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #7c3aed; cursor: pointer; }
+.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 8px; background: #f7f2ff; border-bottom: 1px solid #e6d9fb; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
+.nav-dot { background: none; border: 2px solid #d8b4fe; color: #6d28d9; font-size: .68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+.nav-dot.active { background: #7c3aed; color: #fff; border-color: #7c3aed; }
+.group-title { margin: 22px 16px 0; padding: 10px 14px; background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; border-radius: 12px; font-weight: 900; font-size: 1rem; }
+.section { padding: 20px 16px 8px; max-width: 720px; margin: 0 auto; }
 .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
-.s1 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
-.s2 { background: linear-gradient(135deg,#0369a1,#38bdf8); }
-.s3 { background: linear-gradient(135deg,#d97706,#f59e0b); }
-.s4 { background: linear-gradient(135deg,#be185d,#ec4899); }
-.s5 { background: linear-gradient(135deg,#0d9488,#2dd4bf); }
-.s6 { background: linear-gradient(135deg,#16a34a,#22c55e); }
-.s7 { background: linear-gradient(135deg,#0891b2,#22d3ee); }
-.s8 { background: linear-gradient(135deg,#475569,#64748b); }
-.section-title { font-size: 1.05rem; font-weight: 800; color: #241638; }
-.section-sub { font-size: 0.74rem; color: #8a7a9a; margin-top: 2px; }
-
-.card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(124,58,237,0.08); border: 1px solid #ecdcfa; }
-.card-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #7c3aed; margin-bottom: 10px; }
-
-.tip { background: linear-gradient(135deg,#f5edfd,#fdf2f8); border-left: 4px solid #a855f7; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.6; }
-.tip .tip-title { font-size: 0.7rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-.tip strong { color: #7c3aed; }
-
-.rule-box { background: white; border: 2px solid #7c3aed; border-radius: 14px; padding: 14px; margin-bottom: 12px; }
-.rule-title { font-size: 0.7rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.rule-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #ecdcfa; }
-.rule-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.rule-tag { color: white; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-.bg-purple { background: #7c3aed; }
-.bg-blue   { background: #0369a1; }
-.bg-amber  { background: #d97706; }
-.bg-pink   { background: #be185d; }
-.bg-teal   { background: #0d9488; }
-.bg-green  { background: #16a34a; }
-.rule-text { font-size: 0.88rem; line-height: 1.55; }
-.rule-text em { color: #7c3aed; font-style: normal; font-weight: 700; }
-.rule-text small { display: block; color: #a293b0; font-size: 0.78rem; margin-top: 2px; }
-
-.example-box { background: #faf6fd; border: 1.5px solid #ecdcfa; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.7; }
-.example-box .ex-label { font-size: 0.68rem; font-weight: 700; color: #8a7a9a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-.ex-correct { color: #16a34a; font-weight: 700; }
-
-.q-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.q-chip { background: #faf6fd; border: 1.5px solid #ecdcfa; border-radius: 20px; padding: 7px 14px; font-size: 0.82rem; font-weight: 700; color: #7c3aed; }
-
-.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-home { background: rgba(124,58,237,0.12); border: 1.5px solid rgba(124,58,237,0.25); color: #7c3aed !important; }
-.btn-next { background: linear-gradient(135deg,#7c3aed,#a855f7); color: white !important; }
-
-.divider { height: 1px; background: #ecdcfa; margin: 8px 16px 0; }
-.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #ecdcfa; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
-.pf-label { font-size: 0.75rem; font-weight: 700; color: #7c3aed; white-space: nowrap; }
-.pf-bar { flex: 1; background: #ecdcfa; border-radius: 10px; height: 8px; overflow: hidden; }
-.pf-fill { height: 100%; background: linear-gradient(90deg,#7c3aed,#16a34a); border-radius: 10px; transition: width 0.5s; width: 0%; }
-.pf-pct { font-size: 0.75rem; font-weight: 700; color: #8a7a9a; }
-.credit { text-align: center; padding: 16px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #7c3aed; }
-
-@media print {
-  .top-nav, .print-btn-wrap, .nav-dots, .progress-footer, .bottom-nav, .hero, .credit, .pf-bar, .pf-pct { display: none !important; }
-  .print-title-header { display: block !important; }
-  html, body { background: white !important; color: #111 !important; font-size: 11pt; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body { padding-bottom: 0 !important; }
-  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; overflow: visible !important; }
-
-  .section { padding: 10px 0 4px !important; page-break-inside: avoid !important; }
-  .section-header { margin-bottom: 8px !important; }
-  .section-icon { width: 32px !important; height: 32px !important; font-size: 1rem !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .section-title { font-size: 12pt !important; font-weight: 700 !important; color: #241638 !important; }
-  .section-sub   { color: #555 !important; }
-
-  .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; margin-bottom: 8px !important; padding: 10px !important; }
-  .card-title { color: #7c3aed !important; }
-
-  .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 10px !important; }
-  .rule-title { color: #7c3aed !important; }
-  .rule-tag { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; font-size: 8pt !important; padding: 2px 6px !important; }
-  .rule-text { font-size: 10pt !important; }
-  .rule-text em { color: #7c3aed !important; }
-  .rule-row { border-bottom: 1px dashed #ccc !important; }
-
-  .tip { border-left: 3px solid #7c3aed !important; background: #f8f4fc !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 8px 10px !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .tip strong { color: #7c3aed !important; }
-
-  .example-box { border: 1px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  .ex-correct { color: #166534 !important; }
-
-  .q-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  .q-chip { border: 1px solid #ddd !important; }
-
-  .divider { border-top: 1px solid #ddd !important; display: block !important; }
-
-  #sec1 { page-break-before: avoid !important; }
-  #sec2, #sec3, #sec4, #sec5, #sec6, #sec7, #sec8, #sec9, #sec10, #sec11, #sec12, #sec13 { page-break-before: always !important; }
-}
-
-/* ---- PDF EXPORT (JS-generated) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero, body.pdf-export .credit, body.pdf-export .pf-bar, body.pdf-export .pf-pct { display: none !important; }
-body.pdf-export .print-title-header { display: block !important; }
-body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
-body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; }
-body.pdf-export .section { padding: 10px 0 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .section-title { font-weight: 700 !important; color: #241638 !important; }
-body.pdf-export .section-sub { color: #555 !important; }
-body.pdf-export .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .card-title { color: #7c3aed !important; }
-body.pdf-export .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .rule-title, body.pdf-export .rule-text em { color: #7c3aed !important; }
+.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: linear-gradient(135deg,#7c3aed,#ec4899); }
+.section-title { font-size: 1.05rem; font-weight: 800; }
+.section-sub { font-size: .75rem; color: #7a6a9a; margin-top: 2px; }
+.tip { background: linear-gradient(135deg,#f1e8ff,#faf7ff); border-left: 4px solid #ec4899; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: .92rem; line-height: 1.65; break-inside: avoid; }
+.tip-title { font-size: .72rem; font-weight: 700; color: #6d28d9; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.tip strong, .rule-text em { color: #6d28d9; font-style: normal; font-weight: 700; }
+.rule-box { background: #fff; border: 2px solid #7c3aed; border-radius: 14px; padding: 14px; margin-bottom: 12px; break-inside: avoid; }
+.rule-title { font-size: .72rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.rule-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px dashed #e6d9fb; }
+.rule-row:last-child { border-bottom: none; }
+.rule-tag { color: #fff; font-size: .75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; max-width: 150px; }
+.rule-text { font-size: .9rem; line-height: 1.55; }
+.example-box { background: #faf7ff; border: 1.5px solid #e6d9fb; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: .9rem; line-height: 1.7; break-inside: avoid; }
+.ex-label { font-size: .68rem; font-weight: 700; color: #7a6a9a; text-transform: uppercase; margin-bottom: 6px; }
+.divider { height: 1px; background: #e6d9fb; margin: 8px 16px 0; }
+.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px auto 10px; max-width: 720px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; border: 1.5px solid #7c3aed; color: #7c3aed; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#7c3aed,#ec4899); color: #fff; border: none; }
+.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #e6d9fb; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
+.pf-label { font-size: .75rem; font-weight: 700; color: #7c3aed; }
+.pf-bar { flex: 1; background: #e6d9fb; border-radius: 10px; height: 8px; overflow: hidden; }
+.pf-fill { height: 100%; background: linear-gradient(90deg,#7c3aed,#16a34a); width: 0%; transition: width .4s; }
+.pf-pct { font-size: .75rem; font-weight: 700; color: #7a6a9a; }
+.credit { text-align: center; padding: 16px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .group-title { border-bottom: 2px solid #7c3aed; border-radius: 0; padding: 4px 0; }
+body.pdf-export .rule-box { border: 1.5px solid #555 !important; }
 body.pdf-export .rule-row { border-bottom: 1px dashed #ccc !important; }
-body.pdf-export .tip { border-left: 3px solid #7c3aed !important; background: #f8f4fc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .tip strong { color: #7c3aed !important; }
-body.pdf-export .example-box { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .ex-correct { color: #166534 !important; }
-body.pdf-export .q-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-body.pdf-export .q-chip { border: 1px solid #ddd !important; }
-body.pdf-export .divider { border-top: 1px solid #ddd !important; display: block !important; }
-body.pdf-export #sec1 { page-break-before: avoid !important; }
-body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6, body.pdf-export #sec7, body.pdf-export #sec8, body.pdf-export #sec9, body.pdf-export #sec10, body.pdf-export #sec11, body.pdf-export #sec12, body.pdf-export #sec13 { page-break-before: always !important; }
-</style>
-</head>
-<body>
-
-<!-- PRINT HEADER (hidden on screen) -->
-<div class="print-title-header" style="display:none;text-align:center;padding:0 0 12px;border-bottom:2px solid #7c3aed;margin-bottom:16px;">
-  <div style="font-size:14pt;font-weight:900;color:#7c3aed;">Português — Guia de Estudos</div>
-  <div style="font-size:10pt;color:#555;margin-top:4px;">Recuperação — Caps. 7, 8 e 9 · Desenvolvido por Jhony Beraldo</div>
-</div>
-
-<div class="top-nav">
-  <a href="index.html">🏠 Início</a>
-  <span>📚 Resumo do Conteúdo</span>
-</div>
-<div class="hero">
-  <span class="hero-emoji">📚</span>
-  <h1>Resumo de Português</h1>
-  <h2>Recuperação de Português · Caps. 7, 8 e 9</h2>
-  <div class="hero-pill">📝 Leia antes de fazer a prova!</div>
-</div>
-
+body.pdf-export .tip { border-left: 3px solid #7c3aed !important; background: #f6f6f6 !important; }
+body.pdf-export .example-box { border: 1px solid #ccc !important; }
+body.pdf-export .section { break-inside: auto; }
+body.pdf-export .rule-tag { border: 1px solid #999; }
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span>📚 Resumo do Conteúdo</span></div>
+<div class="hero"><span class="hero-emoji">📚</span><h1>Resumo de Português</h1><h2>4º Bimestre · Livro + revisão da professora</h2><div class="hero-pill">📝 Leia com calma antes de fazer os níveis!</div></div>
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-
-<div class="nav-dots">
-  <button class="nav-dot active" data-target="sec1">📖 Interpretar</button>
-  <button class="nav-dot" data-target="sec2">📓 Os textos</button>
-  <button class="nav-dot" data-target="sec3">🧩 Frases</button>
-  <button class="nav-dot" data-target="sec4">🎯 Sílaba tônica</button>
-  <button class="nav-dot" data-target="sec5">🔤 R ou RR</button>
-  <button class="nav-dot" data-target="sec6">🔄 Verbos</button>
-  <button class="nav-dot" data-target="sec7">📔 Verbete</button>
-  <button class="nav-dot" data-target="sec8">📖 Gêneros</button>
-  <button class="nav-dot" data-target="sec9">🎭 Polissemia</button>
-  <button class="nav-dot" data-target="sec10">🔤 Som de S</button>
-  <button class="nav-dot" data-target="sec11">🏷️ -ADA/-ADO</button>
-  <button class="nav-dot" data-target="sec12">🔗 Ditongos</button>
-  <button class="nav-dot" data-target="sec13">✅ Dicas</button>
-</div>
-
-<!-- SEC 1 -->
-<div class="section" id="sec1">
-  <div class="section-header">
-    <div class="section-icon s1">📖</div>
-    <div><div class="section-title">Como Interpretar um Texto</div><div class="section-sub">Estratégias para entender o que você lê</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Antes de responder</div>
-    Leia o texto com atenção — se possível, mais de uma vez. Preste atenção em quem escreveu, para quem, com qual finalidade e qual é a ideia principal.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Perguntas que ajudam a interpretar</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Quem?</span><div class="rule-text">Quem escreveu o texto ou é o personagem principal?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Para quê?</span><div class="rule-text">Qual é a finalidade do texto? <small>Contar uma história, informar, divertir, refletir...</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">Onde/Quando?</span><div class="rule-text">Onde e quando os fatos acontecem?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Ideia principal</span><div class="rule-text">Qual é a mensagem mais importante do texto?</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🧠 Macete</div>
-    Releia o trecho da pergunta no texto antes de responder. A resposta quase sempre está escrita ali, só precisa ser encontrada com calma!
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Sentido literal x sentido interpretativo</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Sentido literal (real)</span><div class="rule-text">É o que está <em>escrito diretamente</em> no texto — os fatos, sem segundas intenções.<small>Ex: "Bento encontrou uma caixinha com sementes."</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Sentido interpretativo (figurado)</span><div class="rule-text">É a <em>mensagem por trás</em> da história — o que o autor quis dizer além do fato.<small>Ex: as sementes representam algo que cresce com o tempo, como o amor ou a amizade.</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo de história curta</div>
-    "Dona Alzira dizia ao neto Bento que seu maior tesouro estava escondido no jardim. Bento cavou e só achou uma caixinha com sementes secas. A vovó explicou: essas sementes virariam flores para compartilhar com os vizinhos — esse era o verdadeiro tesouro dela."<br><br>
-    <strong>Sentido literal:</strong> a caixinha tinha sementes.<br>
-    <strong>Sentido interpretativo:</strong> o "tesouro" da vovó é o ato de cultivar e compartilhar, não riqueza material.
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 2 -->
-<div class="section" id="sec2">
-  <div class="section-header">
-    <div class="section-icon s2">📓</div>
-    <div><div class="section-title">Os Textos do Bimestre</div><div class="section-sub">Resumo dos textos lidos nos capítulos 7 e 8</div></div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">📔 Diário de Maura</div>
-    <div class="rule-text">Maura Eduarda Brandão é uma <em>pesquisadora</em> que viajou às Ilhas Galápagos e escreveu um diário contando sobre os animais que viu (albatrozes, tartarugas gigantes, fragatas e patolas-de-pés-azuis). Um diário serve para <em>compartilhar vivências</em>, contar fatos do dia a dia e até provocar humor no leitor.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🌿 Naturário</div>
-    <div class="rule-text">O <em>Naturário</em> é uma ideia do programa "Ser Criança é Natural", criado pela educadora <em>Ana Carol Thomé</em>. A proposta é registrar, todos os dias, uma ação de aproximação com a natureza — por isso usa a hashtag <em>#TodoDiaLáForaSCN</em>. Surgiu após o ano de 2020, marcado pelo isolamento social.</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">😄 Tirinhas da Mafalda</div>
-    <div class="rule-text">Mafalda é uma personagem de tirinhas criada pelo cartunista argentino <em>Quino</em>, em 1964. Ela é uma menina inquieta e questionadora, que faz reflexões espertas e cheias de humor sobre o mundo à sua volta — inclusive sobre a natureza.</div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 3 -->
-<div class="section" id="sec3">
-  <div class="section-header">
-    <div class="section-icon s3">🧩</div>
-    <div><div class="section-title">Organização de Frases</div><div class="section-sub">Como montar uma frase com sentido completo</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Uma frase precisa fazer sentido</div>
-    Para organizar bem uma frase, pense nas perguntas: <strong>Quem? O quê? Como? Quando? Onde? Com quem?</strong>
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Antes e depois do verbo</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Antes do verbo</span><div class="rule-text">Geralmente vem <em>quem pratica a ação</em> (o sujeito).<small>Ex: "As crianças brincaram..."</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Depois do verbo</span><div class="rule-text">Geralmente vem o <em>complemento</em>: o quê, como, onde ou quando.<small>Ex: "...no parque."</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo do livro</div>
-    Palavras soltas: "abriu" — "Miguelito" — "o sinal"<br>
-    Frase organizada: <span class="ex-correct">"Miguelito abriu o sinal."</span>
-  </div>
-
-  <div class="q-grid">
-    <div class="q-chip">Quem?</div><div class="q-chip">O quê?</div><div class="q-chip">Como?</div>
-    <div class="q-chip">Quando?</div><div class="q-chip">Onde?</div><div class="q-chip">Com quem?</div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 4 -->
-<div class="section" id="sec4">
-  <div class="section-header">
-    <div class="section-icon s4">🎯</div>
-    <div><div class="section-title">Posição da Sílaba Tônica</div><div class="section-sub">Oxítona, paroxítona e proparoxítona</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Como contar a posição</div>
-    Contamos a posição da sílaba tônica sempre <strong>de trás para frente</strong> — do final para o início da palavra!
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 As três classificações</div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Oxítona</span><div class="rule-text">Sílaba tônica na <em>última</em> sílaba.<small>Ex: a-ZUL, fe-LIZ, ja-CA-RÉ</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Paroxítona</span><div class="rule-text">Sílaba tônica na <em>penúltima</em> sílaba.<small>Ex: MA-RI-nha, TÁ-xi, IN-crí-vel</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Proparoxítona</span><div class="rule-text">Sílaba tônica na <em>antepenúltima</em> sílaba.<small>Ex: ÂN-gu-lo, É-po-ca, Ó-cu-lo</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Mais exemplos do livro</div>
-    Proparoxítonas: plácido, óculo<br>
-    Paroxítonas: fácil, túnel, água, vida<br>
-    Oxítonas: jiló, até, feliz
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 5 -->
-<div class="section" id="sec5">
-  <div class="section-header">
-    <div class="section-icon s5">🔤</div>
-    <div><div class="section-title">Uso do R ou RR</div><div class="section-sub">Quando usar um R ou dois</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 5 categorias caem na prova!</div>
-    A prova costuma pedir pra você classificar palavras em <strong>5 colunas diferentes</strong> de R. Vamos ver cada uma com exemplos corretos.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 As 5 categorias do R</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">1. R inicial</span><div class="rule-text">R no <em>começo</em> da palavra. Som sempre forte, um R só.<small>Ex: rato, rainha, relógio.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">2. R entre vogais</span><div class="rule-text">R sozinho <em>entre duas vogais</em>. Som fraco.<small>Ex: careta, curioso, aurora.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">3. RR</span><div class="rule-text">Som forte entre duas vogais: usa-se <em>RR</em>.<small>Ex: arranhar, correr, guerra.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">4. R entre consoante e vogal (ou vogal e consoante)</span><div class="rule-text">O R fica <em>colado</em> numa consoante — antes ou depois dela — mas <strong>sem formar encontro consonantal</strong> (como br, cr, dr, fr, gr, pr, tr, vr, que NÃO entram aqui).<small>Ex: honra, genro (consoante+R), porta, verde, certo (vogal+R+consoante).</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">5. R no final</span><div class="rule-text">R como <em>última letra</em> da palavra.<small>Ex: cantar, mar, dizer, comer.</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">⚠️ Cuidado com a pegadinha!</div>
-    Palavras como <strong>"tronco"</strong> ou <strong>"prato"</strong> têm um encontro consonantal (TR, PR) — <strong>NÃO entram</strong> na categoria 4! A categoria 4 é só pra R junto de consoante <u>sem</u> formar esses grupos (br, cr, dr, fr, gr, pr, tr, vr).
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Comparando bem</div>
-    <strong>Categoria 4 (vale):</strong> por-ta, ver-de, hon-ra, gen-ro.<br>
-    <strong>Encontro consonantal (NÃO vale):</strong> tron-co (tr), pra-to (pr), bra-ço (br).
-  </div>
-
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 6 -->
-<div class="section" id="sec6">
-  <div class="section-header">
-    <div class="section-icon s6">🔄</div>
-    <div><div class="section-title">Verbos: Presente, Passado e Futuro</div><div class="section-sub">Terminações -AM e -ÃO</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Como identificar o tempo do verbo</div>
-    O passado geralmente termina em <strong>-AM</strong> (coisas que já aconteceram). O futuro geralmente termina em <strong>-ÃO</strong> (coisas que ainda vão acontecer).
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Os três tempos verbais</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Presente</span><div class="rule-text">Ação que acontece <em>agora</em>.<small>Ex: "O gato bebe leite."</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Passado (-AM)</span><div class="rule-text">Ação que <em>já aconteceu</em>.<small>Ex: "Ontem, os meninos jogaram futebol."</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Futuro (-ÃO)</span><div class="rule-text">Ação que <em>ainda vai acontecer</em>.<small>Ex: "Amanhã, as meninas assistirão ao cinema."</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Compare</div>
-    Passado: "eles <strong>voltaram</strong> de viagem." (já aconteceu)<br>
-    Futuro: "meus tios <strong>almoçarão</strong> na minha casa." (ainda vai acontecer)
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec7">
-  <div class="section-header">
-    <div class="section-icon s7">📔</div>
-    <div><div class="section-title">O Verbete (Dicionário ou Enciclopédia)</div><div class="section-sub">Como funciona a explicação de uma palavra</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O que é um verbete?</div>
-    Verbete é o texto curto que explica o significado de uma palavra no dicionário (ou enciclopédia). Ele traz a classe gramatical da palavra (substantivo, adjetivo...) e uma ou mais definições.
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo de verbete</div>
-    <strong>Girafa</strong> (gi.ra.fa) s.f. 1. Animal mamífero de pescoço muito comprido, que vive nas savanas da África. 2. É o animal mais alto do mundo.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 O que um verbete costuma ter</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Palavra</span><div class="rule-text">Escrita já separada em sílabas.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Classe gramatical</span><div class="rule-text">Abreviada, como "s.f." (substantivo feminino) ou "adj." (adjetivo).</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Definição(ões)</span><div class="rule-text">Um ou mais significados numerados da palavra.</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🧠 Treine o seu!</div>
-    Você também pode criar um verbete de uma palavra inventada — basta seguir a mesma estrutura: palavra, classe gramatical e definição criativa!
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec8">
-  <div class="section-header">
-    <div class="section-icon s2">📖</div>
-    <div><div class="section-title">Gêneros Textuais: Diário, Tirinha e Verbete</div><div class="section-sub">Finalidade, estrutura e características de cada um</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Cada texto tem uma finalidade</div>
-    Já estudamos esses três tipos de texto nos capítulos anteriores. Agora é hora de comparar as características de cada um!
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 As três finalidades e estruturas</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">Diário</span><div class="rule-text">Texto <em>pessoal</em>, escrito em 1ª pessoa, com <em>data</em>.<small>Relata vivências e sentimentos do dia a dia. Ex: diário da Maura sobre Galápagos.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">Tirinha</span><div class="rule-text">Texto <em>narrativo curto</em>, em quadrinhos.<small>Poucos quadros, personagens com balões de fala, geralmente com humor ou reflexão. Ex: tirinhas da Mafalda.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Verbete</span><div class="rule-text">Texto <em>informativo</em>, de dicionário ou enciclopédia.<small>Explica o significado de uma palavra, com classe gramatical e definição(ões).</small></div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec9">
-  <div class="section-header">
-    <div class="section-icon s3">🎭</div>
-    <div><div class="section-title">Polissemia: Uma Palavra, Vários Significados</div><div class="section-sub">Quando a mesma palavra muda de sentido</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O que é polissemia?</div>
-    Polissemia é quando uma <strong>mesma palavra</strong> tem <strong>vários significados diferentes</strong>, dependendo do contexto em que é usada.
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplos do livro (poema "Colorir")</div>
-    <strong>Bote:</strong> embarcação pequena <em>ou</em> forma do verbo "botar" (ex: "bote a vela e tire o pote do bote").<br>
-    <strong>Vela:</strong> parte do barco que pega vento <em>ou</em> objeto que ilumina.<br>
-    <strong>Caldo:</strong> sopa <em>ou</em> suco.<br>
-    <strong>Casa:</strong> moradia <em>ou</em> forma do verbo "casar" (ex: "para os dois formarem par").
-  </div>
-
-  <div class="tip"><div class="tip-title">🧠 Macete</div>
-    Para descobrir o significado certo de uma palavra polissêmica, leia a frase toda — o contexto sempre dá a dica de qual sentido está sendo usado.
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec10">
-  <div class="section-header">
-    <div class="section-icon s4">🔤</div>
-    <div><div class="section-title">Diferentes Grafemas para o Som de /S/</div><div class="section-sub">Várias letras, um só som</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O som de S nem sempre se escreve com "S"</div>
-    O som /s/ pode ser representado por diferentes letras ou grupos de letras, dependendo da palavra.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 As formas de escrever o som de /S/</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">S</span><div class="rule-text">Ex: sapato, saco, sentir.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">SS</span><div class="rule-text">Ex: pessoa, sossego, passaro (pássaro).</div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Ç</span><div class="rule-text">Ex: cabeça, caça, laço.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">C (antes de e/i)</span><div class="rule-text">Ex: piscina, cimento.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">SC</span><div class="rule-text">Ex: nascimento, descanso, crescimento.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">XC</span><div class="rule-text">Ex: excesso, exceto, excelente.</div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec11">
-  <div class="section-header">
-    <div class="section-icon s5">🏷️</div>
-    <div><div class="section-title">Sufixos -ADA e -ADO</div><div class="section-sub">Transformando substantivos em adjetivos</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Como funciona</div>
-    Alguns substantivos podem formar <strong>adjetivos</strong> com o acréscimo do sufixo <strong>-ADA</strong> ou <strong>-ADO</strong> — indicando uma característica.
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo do livro</div>
-    ESTRELA (substantivo) + ADA = <span class="ex-correct">ESTRELADA</span> (adjetivo)<br>
-    "Noite <strong>estrelada</strong>" = noite com muitas estrelas visíveis.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Mais exemplos</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">rosa → rosado</span><div class="rule-text">"Tela cheia de tons de rosa" → tela rosada.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">tempero → temperado</span><div class="rule-text">"Comida cheia de tempero" → comida temperada.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">ânimo → animado</span><div class="rule-text">"Turma cheia de ânimo" → turma animada.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">iluminação → iluminado</span><div class="rule-text">"Rua cheia de iluminação" → rua iluminada.</div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec12">
-  <div class="section-header">
-    <div class="section-icon s6">🔗</div>
-    <div><div class="section-title">Ditongos</div><div class="section-sub">Duas vogais, uma sílaba só</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O que é um ditongo?</div>
-    Ditongo é o <strong>encontro de duas vogais</strong> (ou vogal + semivogal) que ficam juntas em uma <strong>mesma sílaba</strong>, formando um só som.
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplos</div>
-    <strong>Com ditongo:</strong> céu (c-éu), noite (noi-te), animais (ani-mais), pai (pai), herói (he-rói).<br>
-    <strong>Sem ditongo:</strong> parque (par-que), floresta (flo-res-ta), sol (sol).
-  </div>
-
-  <div class="tip"><div class="tip-title">🧠 Macete</div>
-    Separe a palavra em sílabas. Se duas vogais aparecerem juntas dentro da <em>mesma</em> sílaba, é ditongo!
-  </div>
-</div>
-<div class="divider"></div>
-
-<div class="section" id="sec13">
-  <div class="section-header">
-    <div class="section-icon s8">✅</div>
-    <div><div class="section-title">Dicas Rápidas para a Prova</div><div class="section-sub">Revisão relâmpago antes de responder</div></div>
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Checklist antes de entregar</div>
-    <div class="rule-row"><span class="rule-tag bg-purple">1</span><div class="rule-text">Reli o texto e as perguntas com calma?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-blue">2</span><div class="rule-text">Organizei as frases pensando em Quem, O quê, Quando?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">3</span><div class="rule-text">Contei a sílaba tônica de trás para frente?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">4</span><div class="rule-text">Conferi se o R está no início, entre vogais ou depois de consoante?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">5</span><div class="rule-text">Verifiquei se o verbo termina em -AM (passado) ou -ÃO (futuro)?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-purple">6</span><div class="rule-text">Lembrei das características de diário, tirinha e verbete?</div></div>
-    <div class="rule-row"><span class="rule-tag bg-pink">7</span><div class="rule-text">Fiquei atento a palavras com mais de um significado (polissemia)?</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🌟 Você consegue!</div>
-    Revise esse resumo com calma antes da prova. Se precisar, releia os textos do livro sobre a Maura, o Naturário, a Mafalda e o poema "Colorir" — eles são a base das perguntas de interpretação!
-  </div>
-</div>
-
-<div class="bottom-nav">
-  <a href="index.html" class="btn-home">🏠 Voltar ao Início</a>
-
-  <a href="nivel1_basico.html" class="btn-next">⭐ Nível 1 →</a>
-</div>
-
-<div style="height:60px;"></div>
-<div class="progress-footer">
-  <div class="pf-label">📖 Progresso</div>
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-
+<div class="nav-dots"><button class="nav-dot active" data-target="sec1">📢 Campanha</button><button class="nav-dot" data-target="sec2">🎭 Sentidos</button><button class="nav-dot" data-target="sec3">🔠 Siglas</button><button class="nav-dot" data-target="sec4">✂️ Redução</button><button class="nav-dot" data-target="sec5">🧱 Frases</button><button class="nav-dot" data-target="sec6">🎶 Cordel</button><button class="nav-dot" data-target="sec7">🔍 Interpretação</button><button class="nav-dot" data-target="sec8">⭐ Dicas</button></div>
+<div class="group-title">📘 Parte 1 — Campanhas e sentido das palavras</div><div class="section" id="sec1"><div class="section-header"><div class="section-icon">📢</div><div><div class="section-title">Anúncio de campanha</div><div class="section-sub">Cartazes que querem convencer você</div></div></div><div class="tip"><div class="tip-title">💡 O que é?</div><strong>Anúncio de campanha</strong> (ou anúncio publicitário dentro de uma campanha) é uma peça criada para <strong>divulgar</strong> um produto, serviço, marca, evento ou uma <strong>ideia/causa social</strong>.</div><div class="rule-box"><div class="rule-title">📐 Exemplos do livro e da revisão</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Prato cheio</span><div class="rule-text">Campanha que pede doação de alimentos. Frases: <em>"Alimente essa ideia"</em> e <em>"Mate a fome de alguém"</em>. As palavras "alimente" e "mate" querem <em>motivar o leitor a doar alimentos</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Dengue</span><div class="rule-text">Campanha de combate à dengue: <em>evitar utensílios com água parada</em> e <em>eliminar os focos do mosquito</em>. Deixar garrafas e vasos cheios de água é o contrário do que a campanha pede!</div></div></div><div class="rule-box"><div class="rule-title">📐 Como é um bom cartaz de campanha</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Palavras de comando</span><div class="rule-text">Palavras que <em>pedem uma ação</em> do leitor. Ex.: doe, participe, elimine.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Frase principal</span><div class="rule-text">Uma frase curta que <em>cause impacto</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Cores e letras</span><div class="rule-text">Cores e tamanhos de letras diferentes, pra chamar a atenção.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Imagens</span><div class="rule-text">Imagens que <em>chamem a atenção</em> do leitor.</div></div></div></div><div class="divider"></div><div class="section" id="sec2"><div class="section-header"><div class="section-icon">🎭</div><div><div class="section-title">Sentido comum e sentido figurado</div><div class="section-sub">Quando a palavra muda de significado</div></div></div><div class="rule-box"><div class="rule-title">📐 Duas formas de usar as palavras</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Sentido comum (literal ou real)</span><div class="rule-text">É o sentido <em>verdadeiro, real</em>. Ex.: "Não estou gostando dessa <em>gordurinha</em> no meu corpo!"</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Sentido figurado</span><div class="rule-text">É o sentido <em>imaginário, criativo</em>, que não é real ao pé da letra. Ex.: "Não estou gostando desse <em>pneuzinho</em> no meu corpo!"</div></div></div><div class="example-box"><div class="ex-label">Exemplo do livro: a palavra "alimentar"</div><strong>Alimente-se bem!</strong> → sentido <em>comum</em>: alimentar = nutrir.<br><strong>Alimente essa ideia!</strong> → sentido <em>figurado</em>: alimentar = participar.</div><div class="example-box"><div class="ex-label">Outro exemplo: a palavra "flor"</div><strong>"Filhinha, você é uma flor!"</strong> → figurado (ela não é uma planta, é querida e delicada).<br><strong>"Uma flor para você!"</strong> → comum (é uma flor de verdade).</div><div class="rule-box"><div class="rule-title">📐 Expressões que caem na prova</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Abandonar o barco</span><div class="rule-text">Desistir, deixar algo no meio do caminho.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Ter dor de cotovelo</span><div class="rule-text">Sentir ciúme ou inveja.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Acertar na mosca</span><div class="rule-text">Acertar em cheio, exatamente.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Quebrar o galho</span><div class="rule-text">Ajudar a resolver um problema.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Chorar o leite derramado</span><div class="rule-text">Ficar lamentando algo que já aconteceu e não tem mais jeito.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Menina dos meus olhos</span><div class="rule-text">Pessoa muito querida.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Torcer o cérebro</span><div class="rule-text">Se esforçar muito pra pensar.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Nem um pio</span><div class="rule-text">Nenhum barulho, silêncio total.</div></div></div><div class="tip"><div class="tip-title">🧠 Macete</div>Pergunte: <strong>"isso está acontecendo de verdade?"</strong> Se sim, é sentido comum (SR). Se for uma imagem, um exagero ou uma expressão, é figurado (SF). Ex.: "O carro do Arthur é vermelho" = real (SR).</div></div><div class="divider"></div><div class="group-title">📗 Parte 2 — Siglas, abreviações e frases</div><div class="section" id="sec3"><div class="section-header"><div class="section-icon">🔠</div><div><div class="section-title">Siglas, abreviaturas e abreviações</div><div class="section-sub">Três jeitos de encurtar</div></div></div><div class="rule-box"><div class="rule-title">📐 Não confunda!</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Sigla</span><div class="rule-text">Formada pelas <em>letras ou sílabas iniciais</em> das palavras de uma expressão, título, órgão, empresa ou instituição. Ex.: <em>SUS</em> (Sistema Único de Saúde), Sesc, Senac, CPF, CNPJ, PM.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Abreviatura</span><div class="rule-text">Forma reduzida de palavras ou frases que <em>termina sempre com ponto</em>. Ex.: Pág. (página), Dr. e Dra. (doutor e doutora), Obs., Prof.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Abreviação</span><div class="rule-text">Forma reduzida de palavras que <em>NÃO termina com ponto</em>. Ex.: game (videogame), cê (você), tá (está), refri, pq, dnd.</div></div></div><div class="tip"><div class="tip-title">🧠 Macete do ponto</div>Tem <strong>ponto no final</strong>? É <strong>abreviatura</strong>. Não tem ponto e foi cortada ou escrita no jeito de falar? É <strong>abreviação</strong>. São as <strong>letras iniciais</strong> de um nome de órgão ou empresa? É <strong>sigla</strong>.</div><div class="example-box"><div class="ex-label">Classificando (como na revisão)</div>CPF, CNPJ, PM → <strong>sigla</strong><br>Obs., Prof. → <strong>abreviatura</strong> (têm ponto)<br>Refri, Dnd, Pq → <strong>abreviação</strong> (sem ponto)<br>Km → sem ponto, então pela regra da professora também entra como <strong>abreviação</strong>.</div></div><div class="divider"></div><div class="section" id="sec4"><div class="section-header"><div class="section-icon">✂️</div><div><div class="section-title">Redução de palavras</div><div class="section-sub">Usando só um pedaço da palavra</div></div></div><div class="tip"><div class="tip-title">💡 O que é?</div>Na <strong>redução</strong>, usa-se somente uma parte da palavra. Essa parte pode existir como palavra independente. É muito comum na fala e na escrita do dia a dia porque <strong>deixa a palavra mais curta e fácil</strong>.</div><div class="rule-box"><div class="rule-title">📐 Exemplos</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">TV</span><div class="rule-text">televisão</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Foto</span><div class="rule-text">fotografia</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Refri</span><div class="rule-text">refrigerante</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Metrô</span><div class="rule-text">metropolitano</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Moto</span><div class="rule-text">motocicleta</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Profe / Prof</span><div class="rule-text">professor</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Micro</span><div class="rule-text">micro-ondas</div></div></div></div><div class="divider"></div><div class="section" id="sec5"><div class="section-header"><div class="section-icon">🧱</div><div><div class="section-title">Estrutura básica da frase</div><div class="section-sub">Sujeito, verbo e complemento</div></div></div><div class="tip"><div class="tip-title">💡 A receita da frase</div><strong>Quem faz</strong> (sujeito) + <strong>O que faz</strong> (verbo) + <strong>Onde / O quê</strong> (complemento).</div><div class="example-box"><div class="ex-label">Exemplo 1</div><strong>O gato</strong> (sujeito) + <strong>dorme</strong> (verbo) + <strong>no sofá</strong> (complemento).</div><div class="rule-box"><div class="rule-title">📐 As classes de palavra</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Artigo</span><div class="rule-text">O, os, a, as, um, uns, uma, umas.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Substantivo</span><div class="rule-text">Dá nome a pessoas, lugares, coisas e animais. Ex.: Dona Amélia, galinha, Belém. Pode ser o <em>sujeito</em> (de quem se fala).</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Verbo</span><div class="rule-text">Indica a <em>ação</em>. Ex.: comprou, foram, gostam, têm.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Adjetivo</span><div class="rule-text">Indica uma <em>característica</em>. Ex.: pintadinha, vermelhas, pretas.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Complemento</span><div class="rule-text">O <em>restante da ideia</em>: o que, onde, como.</div></div></div><div class="example-box"><div class="ex-label">Exemplo 2 — analisando uma frase</div><strong>Dona Amélia comprou uma galinha pintadinha.</strong><br>Artigo: uma · Substantivos: Dona Amélia e galinha · Verbo: comprou · Adjetivo: pintadinha (a professora também chama esse adjetivo de complemento).</div><div class="example-box"><div class="ex-label">Mais exemplos (da revisão)</div><strong>José e Maria foram para Belém.</strong> Substantivos: José, Maria, Belém · Verbo: foram · Complemento: para Belém.<br><strong>Os meninos gostam de jogar videogame na sala.</strong> Artigo: os · Substantivos: meninos, videogame, sala · Verbo: gostam · Complemento: de jogar videogame na sala.<br><strong>As joaninhas vermelhas têm pintinhas pretas.</strong> Artigo: as · Substantivos: joaninhas, pintinhas · Verbo: têm · Adjetivos: vermelhas, pretas · Complemento: pintinhas pretas.</div><div class="tip"><div class="tip-title">🧠 Função das palavras</div>Na frase <strong>"Crianças conversam com os pais sobre suas escolhas!"</strong>, a palavra <em>crianças</em> é o substantivo que tem a função de <strong>sujeito</strong> (de quem se fala). O resto é <strong>o que se fala</strong> sobre elas.</div></div><div class="divider"></div><div class="group-title">🎶 Parte 3 — Cordel e interpretação</div><div class="section" id="sec6"><div class="section-header"><div class="section-icon">🎶</div><div><div class="section-title">Cordel</div><div class="section-sub">Poesia popular em folhetos</div></div></div><div class="tip"><div class="tip-title">💡 O que é?</div>Os <strong>cordéis</strong> têm muita relação com a <strong>cantoria de viola</strong>, por causa do <strong>ritmo e da musicalidade</strong>. No Brasil, esse gênero é mais comum na <strong>Região Nordeste</strong>. O nome vem da tradição de expor os folhetos à venda <strong>pendurados em cordas, barbantes ou cordéis</strong>, um costume dos colonizadores portugueses.</div><div class="rule-box"><div class="rule-title">📐 Características do cordel</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Estrofes e versos</span><div class="rule-text">O texto é organizado em <em>versos</em> (linhas) agrupados em <em>estrofes</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Rimas</span><div class="rule-text">Rimas <em>perfeitas e imperfeitas</em> (sons parecidos no final dos versos).</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Musicalidade</span><div class="rule-text">Tem ritmo, parece música.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Linguagem popular</span><div class="rule-text">Jeito de falar do dia a dia.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Xilogravuras</span><div class="rule-text">Ilustrações feitas em madeira, geralmente na capa.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Cordas</span><div class="rule-text">Folhetos vendidos pendurados em cordas.</div></div></div><div class="tip"><div class="tip-title">⚠️ Pegadinha</div>Cordel NÃO é feito de introdução, desenvolvimento e conclusão em parágrafos, nem é "letra maiúscula no início". Isso é de outros tipos de texto!</div><div class="example-box"><div class="ex-label">O cordel do livro</div>Fala do <strong>consumismo</strong> (comprar demais). Mostra que muita gente compra por causa de <strong>conselhos de famosos e propagandas da TV</strong>: "Mostrando produtos de marca; dizendo que leite de vaca é bom para o cabelo crescer". Tem trechos no jeito de falar do dia a dia, como "Papai dizia uma coisa, que guardo como lembrança".</div></div><div class="divider"></div><div class="section" id="sec7"><div class="section-header"><div class="section-icon">🔍</div><div><div class="section-title">Interpretação de texto</div><div class="section-sub">Como não errar as perguntas</div></div></div><div class="rule-box"><div class="rule-title">📐 Passo a passo</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">1</span><div class="rule-text">Leia o texto inteiro, devagar, <em>pelo menos duas vezes</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Olhe o <em>título</em> e as <em>imagens</em>: eles dão pistas do assunto.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Leia a pergunta e volte ao trecho certo do texto.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">Se a pergunta fala de <em>sentido</em>, veja se é comum ou figurado.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">Para <em>finalidade</em>, pense: o texto quer informar, convencer, alertar ou divertir?</div></div></div><div class="tip"><div class="tip-title">🧠 Causas e consequências</div><strong>Causa</strong> é o motivo de algo acontecer. <strong>Consequência</strong> é o que acontece por causa disso. Ex.: compra por impulso (causa) → falta dinheiro pra coisas básicas (consequência).</div></div><div class="divider"></div><div class="section" id="sec8"><div class="section-header"><div class="section-icon">⭐</div><div><div class="section-title">Dicionário rápido e dicas finais</div><div class="section-sub">Revisão relâmpago</div></div></div><div class="rule-box"><div class="rule-title">📐 Resumão</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Sigla</span><div class="rule-text">Letras iniciais: SUS, CPF, PM.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Abreviatura</span><div class="rule-text">Com ponto: Dr., Pág., Prof.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Abreviação</span><div class="rule-text">Sem ponto: refri, pq, game.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Sentido figurado</span><div class="rule-text">Imaginário, criativo.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Sentido comum</span><div class="rule-text">Real, verdadeiro.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Cordel</span><div class="rule-text">Estrofes, versos, rimas, musicalidade, linguagem popular, xilogravuras, cordas.</div></div></div><div class="rule-box"><div class="rule-title">📐 Checklist antes da prova</div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">1</span><div class="rule-text">Sei diferenciar sigla, abreviatura e abreviação?</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Sei achar o sujeito, o verbo e o complemento de uma frase?</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Reconheço o sentido figurado e sei explicar as expressões?</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">Sei as características do cordel e de um anúncio de campanha?</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">Li o texto e a pergunta com calma?</div></div></div><div class="tip"><div class="tip-title">🌟 Você consegue!</div>Leia o resumo, depois faça os níveis. Errou? Leia a explicação e tente de novo!</div></div><div class="divider"></div>
+<div class="bottom-nav"><a href="index.html">🏠 Início</a><a class="nx" href="nivel1_basico.html">⭐ Nível 1 →</a></div>
+<div style="height:60px"></div>
+<div class="progress-footer"><div class="pf-label">📖 Progresso</div><div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div><div class="pf-pct" id="pfPct">0%</div></div>
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-document.querySelectorAll('.nav-dot[data-target]').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dot').forEach(function(d) { d.classList.remove('active'); });
-    btn.classList.add('active');
-    var target = document.getElementById(btn.dataset.target);
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11','sec12','sec13'];
-function updateProgress() {
-  var scrolled = window.scrollY + window.innerHeight;
-  var total = document.body.scrollHeight;
-  var pct = Math.min(100, Math.round((scrolled / total) * 100));
-  document.getElementById('pfFill').style.width = pct + '%';
-  document.getElementById('pfPct').textContent = pct + '%';
-  for (var i = sections.length - 1; i >= 0; i--) {
-    var el = document.getElementById(sections[i]);
-    if (el && window.scrollY >= el.offsetTop - 120) {
-      document.querySelectorAll('.nav-dot').forEach(function(d, idx) { d.classList.toggle('active', idx === i); });
-      break;
-    }
-  }
+var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8'];
+document.querySelectorAll('.nav-dot').forEach(function(b){ b.addEventListener('click', function(){
+  document.querySelectorAll('.nav-dot').forEach(function(d){ d.classList.remove('active'); }); b.classList.add('active');
+  var t = document.getElementById(b.getAttribute('data-target')); if (t) t.scrollIntoView({behavior:'smooth', block:'start'}); }); });
+function updateProgress(){
+  var pct = Math.min(100, Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100));
+  document.getElementById('pfFill').style.width = pct + '%'; document.getElementById('pfPct').textContent = pct + '%';
+  for (var i = sections.length - 1; i >= 0; i--) { var el = document.getElementById(sections[i]);
+    if (el && window.scrollY >= el.offsetTop - 140) { document.querySelectorAll('.nav-dot').forEach(function(d, idx){ d.classList.toggle('active', idx === i); }); break; } }
 }
-window.addEventListener('scroll', updateProgress, { passive: true });
-updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true }); updateProgress();
 
 function downloadPDF() {
   var btn = document.getElementById('pdfBtn');
@@ -575,25 +83,15 @@ function downloadPDF() {
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Resumo_Portugues.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Resumo_Portugues_4Bim.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
-</script>
-</body>
-</html>
+
+</script></body></html>
